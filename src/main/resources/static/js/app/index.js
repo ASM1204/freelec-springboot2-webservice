@@ -29,9 +29,8 @@ var main = {
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
-            alert('글이 등록되었습니다.');
             window.location.reload(true);
-            window.location.href = '/#board';
+            window.location.href = 'http://ec2-3-34-71-14.ap-northeast-2.compute.amazonaws.com/#board';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
