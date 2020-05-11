@@ -58,9 +58,23 @@
         <!-- Me -->
         <article id="me" class="panel">
             <header>
-                <h1>Jane Doe</h1>
-                <p>Senior Astral Projectionist</p>
+                <h1>T.T</h1>
+                <p>Transformative Tag</p>
             </header>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                            {{#userName}}
+                            Logged in as: <span id="user">{{userName}}</span>
+                            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                            {{/userName}}
+                            {{^userName}}
+                            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                            <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+                            {{/userName}}
+                    </div>
+                    <div>테스트중</div>
+                </div>
             <a href="#work" class="jumplink pic">
                 <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
                 <img src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/me.jpg" alt="" />
