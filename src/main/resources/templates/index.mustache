@@ -66,12 +66,12 @@
                         <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                             {{#userName}}
                             Logged in as: <span id="user">{{userName}}</span>
-                                <button class="" role="button"><a href="/logout" class="btn btn-info active" role="button">Logout</a></button>
+                                <button class=""><a href="/logout" class="btn btn-info active" role="button">Logout</a></button>
                             {{/userName}}
                             {{^userName}}
-                                <button class="" role="button"><a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a></button>
+                                <button class=""><a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a></button>
 
-                                <button class="" role="button"><a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a></button>
+                                <button class=""><a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a></button>
                             {{/userName}}
                     </div>
                 </div>
