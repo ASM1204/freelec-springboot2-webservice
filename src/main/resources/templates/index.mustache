@@ -6,7 +6,7 @@
     <!-- Nav -->
     <nav id="nav">
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
-        <a href="#work" class="icon fa-folder"><span>Work</span></a>
+        <a href="#auction" class="icon fa-folder"><span>Auction</span></a>
         <a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
         <a href="#" class="icon fa-twitter"><span>Twitter</span></a>
     </nav>
@@ -22,9 +22,8 @@
             </header>
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="/posts/save" role="button" >글 등록</a>
                             {{#userName}}
-                            Logged in as: <span id="user">{{userName}}</span>
+                            <span id="user">{{userName}}</span>님
                                 <form>
                                     <button type="submit" formaction="/logout">Logout</button>
                                 </form>
@@ -39,16 +38,16 @@
                             {{/userName}}
                     </div>
                 </div>
-            <a href="#work" class="jumplink pic">
-                <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+            <a href="#auction" class="jumplink pic">
+                <span class="arrow icon fa-chevron-right"><span>See my auction</span></span>
                 <img src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/me.jpg" alt="" />
             </a>
         </article>
 
-        <!-- Work -->
-        <article id="work" class="panel">
+        <!-- Auction -->
+        <article id="auction" class="panel">
             <header>
-                <h2>Work</h2>
+                <h2>Auction</h2>
             </header>
             <p>
                 Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
