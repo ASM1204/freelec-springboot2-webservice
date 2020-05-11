@@ -172,30 +172,27 @@
             <p>
                 게시판을 이용하면 다른 유저들과 소통할 수 있습니다
             </p>
-            <section>
-                <div class="row">
-                    <table class="table table-horizontal table-bordered">
-                        <thead class="thead-strong">
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>최종수정일</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        {{#posts}}
-                            <tr class="4u$ 12u$(mobile)">
-                                <td>{{id}}</td>
-                                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                                <td>{{author}}</td>
-                                <td>{{modifiedDate}}</td>
-                            </tr>
-                        {{/posts}}
-                        </tbody>
-                    </table>
+            <form action="#" method="post">
+                <div>
+                    <div class="row">
+                        <div class="6u 12u$(mobile)">
+                            <input id="title" type="text" name="title" placeholder="Title" />
+                        </div>
+                        <div class="6u$ 12u$(mobile)">
+                            <input id="author" type="text" name="author" placeholder="Author" />
+                        </div>
+                        <div class="12u$">
+                            <input type="text" name="subject" placeholder="Subject" />
+                        </div>
+                        <div class="12u$">
+                            <textarea id="content" name="Contents" placeholder="Contents" rows="8"></textarea>
+                        </div>
+                        <div class="12u$">
+                            <button type="button" class="btn btn-primary" id="btn-save">Submit</button>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </form>
         </article>
 
         <!-- Write -->
@@ -315,7 +312,7 @@
                             <textarea id="content" name="Contents" placeholder="Contents" rows="8"></textarea>
                         </div>
                         <div class="12u$">
-                            <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+                            <button type="button" class="btn btn-primary" id="btn-save">Submit</button>
                         </div>
                     </div>
                 </div>
