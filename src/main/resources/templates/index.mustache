@@ -22,15 +22,15 @@
             </header>
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                        <a href="/posts/save" role="button" >글 등록</a>
                             {{#userName}}
                             Logged in as: <span id="user">{{userName}}</span>
-                                <button onclick = "location.href = '/logout' ">Logout</button>
+                                <a href="/logout" role="button">Logout</a>
                             {{/userName}}
                             {{^userName}}
-                                <button onclick = "location.href = '/oauth2/authorization/google' ">Google Login</button>
+                                <a href="/oauth2/authorization/google" role="button">Google Login</a>
 
-                                <button onclick = "location.href = '/oauth2/authorization/naver' ">Naver Login</button>
+                                <a href="/oauth2/authorization/naver" role="button">Naver Login</a>
                             {{/userName}}
                     </div>
                 </div>
