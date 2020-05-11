@@ -25,12 +25,12 @@
                         <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                             {{#userName}}
                             Logged in as: <span id="user">{{userName}}</span>
-                                <button><a href="/logout">Logout</a></button>
+                                <button onclick = "location.href = '/logout' ">Logout</button>
                             {{/userName}}
                             {{^userName}}
-                                <button><a href="/oauth2/authorization/google">Google Login</a></button>
+                                <button onclick = "location.href = '/oauth2/authorization/google' ">Google Login</button>
 
-                                <button><a href="/oauth2/authorization/naver">Naver Login</a></button>
+                                <button onclick = "location.href = '/oauth2/authorization/naver' ">Naver Login</button>
                             {{/userName}}
                     </div>
                 </div>
