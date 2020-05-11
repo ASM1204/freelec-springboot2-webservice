@@ -25,11 +25,17 @@
                         <a href="/posts/save" role="button" >글 등록</a>
                             {{#userName}}
                             Logged in as: <span id="user">{{userName}}</span>
-                                <a href="/logout" role="button">Logout</a>
+                                <form>
+                                    <button type="submit" formaction="/logout">Logout</button>
+                                </form>
                             {{/userName}}
                             {{^userName}}
-                                <a href="/oauth2/authorization/google" role="button">Google Login</a>
-                                <a href="/oauth2/authorization/naver" role="button">Naver Login</a>
+                                <form>
+                                    <button type="submit" formaction="/oauth2/authorization/google">Google Login</button>
+                                </form>
+                                <form>
+                                    <button type="submit" formaction="/oauth2/authorization/naver">Naver Login</button>
+                                </form>
                             {{/userName}}
                     </div>
                 </div>
