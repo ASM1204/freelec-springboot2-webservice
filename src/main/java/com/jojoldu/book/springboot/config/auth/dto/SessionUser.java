@@ -11,17 +11,11 @@ public class SessionUser implements Serializable {
     private String email;
     private String picture;
     private String role;
-    private String temp;
-    boolean userRole = false;
 
     public SessionUser(User user) {
         this.name = user.getName();
         this.email = user.getEmail();
         this.picture = user.getPicture();
         this.role = user.getRoleKey();
-        temp = this.role;
-        if(temp=="GM"){
-            userRole = true;
-        }
     }
 }
