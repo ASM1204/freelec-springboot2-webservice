@@ -27,14 +27,6 @@ public class IndexController {
         }
         return "index";
     }
-    @GetMapping("/")
-    public String role(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("posts", postsService.findAllDesc());
-        if (user != null) {
-            model.addAttribute("userRole", user.getName());
-        }
-        return "index";
-    }
 
     @GetMapping("/posts/save")
     public String postsSave(){
