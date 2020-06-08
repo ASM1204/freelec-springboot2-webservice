@@ -48,22 +48,29 @@ public class User extends BaseTimeEntity {
     private String runnerLose;
 
     @Column(nullable = false)
-    private String nickName;
+    private String gm;
 
 
     @Builder
-    public User(String name, String email, String picture, Role role, String nickName) {
+    public User(String name, String email, String picture, Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
-        this.nickName = nickName;
     }
 
     public User update(String name, String picture) {
         this.name = name;
         this.picture = picture;
 
+        return this;
+    }
+
+    public User GM(Role role, String gm){
+        this.role = role;
+        if(this.role.equals("GM")) {
+            this.gm="gm";
+        }
         return this;
     }
 
