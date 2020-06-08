@@ -2,6 +2,7 @@ package com.jojoldu.book.springboot.service.posts;
 
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.posts.PostsRepository;
+import com.jojoldu.book.springboot.domain.user.RankRepository;
 import com.jojoldu.book.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,14 +37,6 @@ public class PostsService {
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
-                .collect(Collectors.toList());
-    }
-
-
-    @Transactional(readOnly = true)
-    public List<PostsRankResponseDto> findRank() {
-        return postsRepository.findRank().stream()
-                .map(PostsRankResponseDto::new)
                 .collect(Collectors.toList());
     }
 
