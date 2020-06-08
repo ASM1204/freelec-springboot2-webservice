@@ -24,25 +24,25 @@
                 <h1>T . T</h1>
                 <p>Transformative Tag</p>
             </header>
-            <div class="row">
-                <div class="col-md-6">
-                    {{#userName}}
-                        <span id="user">{{userName}}</span>님
-                        <form>
-                            <button type="submit" formaction="/logout">Logout</button>
-                        </form>
-                    {{/userName}}
-                    {{^userName}}
-                        <form>
-                            <button type="submit" formaction="/oauth2/authorization/google">Google</button>
-                        </form>
-                        <form>
-                            <button type="submit" formaction="/oauth2/authorization/naver">Naver</button>
-                        </form>
-                    {{/userName}}
-                </div>
-            </div>
             <a href="#auction" class="jumplink pic">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{#userName}}
+                            <span id="user">{{userName}}</span>님
+                            <form>
+                                <button type="submit" formaction="/logout">Logout</button>
+                            </form>
+                        {{/userName}}
+                        {{^userName}}
+                            <form>
+                                <button type="submit" formaction="/oauth2/authorization/google">Google</button>
+                            </form>
+                            <form>
+                                <button type="submit" formaction="/oauth2/authorization/naver">Naver</button>
+                            </form>
+                        {{/userName}}
+                    </div>
+                </div>
                 <span class="arrow icon fa-chevron-right"><span>See my auction</span></span>
                 <img src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/me.jpg" alt=""/>
             </a>
