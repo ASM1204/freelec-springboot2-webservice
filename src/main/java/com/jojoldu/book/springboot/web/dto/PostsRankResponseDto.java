@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 public class PostsRankResponseDto {
-    private Long id;
+    private String name;
     private String catcherWin;
     private String catcherLose;
     private String runnerWin;
@@ -16,7 +16,7 @@ public class PostsRankResponseDto {
 
 
     public PostsRankResponseDto(User entity) {
-        this.id = entity.getId();
+        this.name = entity.getName();
         this.catcherWin = entity.getCatcherWin();
         this.catcherLose = entity.getCatcherLose();
         this.runnerWin = entity.getRunnerWin();
