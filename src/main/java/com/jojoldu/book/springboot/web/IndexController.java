@@ -27,6 +27,7 @@ public class IndexController {
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
+        model.addAttribute("rank", rankService.findRank());
         return "index";
     }
 
