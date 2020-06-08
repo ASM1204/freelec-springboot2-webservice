@@ -35,15 +35,10 @@ public class Posts extends BaseTimeEntity {
     private int runnerLose;
 
     @Builder
-    public Posts(String title, String content, String author, int catcherWin, int catcherLose, int runnerWin, int runnerLose
-                 ) {
+    public Posts(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
-        this.catcherWin=catcherWin;
-        this.catcherLose=catcherLose;
-        this.runnerWin=runnerWin;
-        this.runnerLose=runnerLose;
     }
 
     public void update(String title, String content) {
