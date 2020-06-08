@@ -28,12 +28,6 @@ public class Posts extends BaseTimeEntity {
 
     private String author;
 
-    @Column(nullable = false)
-    private int catcherWin;
-    private int catcherLose;
-    private int runnerWin;
-    private int runnerLose;
-
     @Builder
     public Posts(String title, String content, String author) {
         this.title = title;
