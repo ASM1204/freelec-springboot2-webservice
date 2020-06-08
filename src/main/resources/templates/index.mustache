@@ -292,36 +292,27 @@
             {{#userName}}
                 <section>
                     <div class="row">
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic01.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic02.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u$ 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic03.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic04.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic05.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u$ 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic06.jpg"
-                                    alt=""></a>
-                        </div>
+                        <table class="table table-horizontal table-bordered">
+                            <thead class="thead-strong">
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>최종수정일</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            {{#rank}}
+                                <tr class="4u$ 12u$(mobile)">
+                                    <td>{{id}}</td>
+                                    <td>{{catcherWin}}</td>
+                                    <td>{{catcherLose}}</td>
+                                    <td>{{runnerWin}}</td>
+                                    <td>{{runnerLose}}</td>
+                                </tr>
+                            {{/rank}}
+                            </tbody>
+                        </table>
                     </div>
                 </section>
             {{/userName}}
