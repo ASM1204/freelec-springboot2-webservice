@@ -2,6 +2,7 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.service.posts.PostsService;
+import com.jojoldu.book.springboot.web.dto.PostsRankListResponseDto;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
 import com.jojoldu.book.springboot.web.dto.PostsUpdateRequestDto;
@@ -28,6 +29,13 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
+
+//    @GetMapping("/api/v1/posts/{id}")
+//    public PostsRankListResponseDto findRankAllDesc(@PathVariable Long id) {
+//        return postsService.findRankAllDesc(id);
+//    }
+
+
 
     @DeleteMapping("/api/v1/posts/{id}")
     public Long delete(@PathVariable Long id) {
