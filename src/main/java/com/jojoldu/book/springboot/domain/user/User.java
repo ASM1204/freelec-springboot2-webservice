@@ -47,8 +47,7 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String runnerLose;
 
-    @Column(nullable = false)
-    private String gm;
+
 
 
     @Builder
@@ -66,13 +65,6 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public User GM(Role role, String gm){
-        this.role = role;
-        if(this.role.equals("GM")) {
-            this.gm="gm";
-        }
-        return this;
-    }
 
     public User Rank(String name, String catcherWin, String catcherLose, String runnerWin, String runnerLose){
         this.name=name;

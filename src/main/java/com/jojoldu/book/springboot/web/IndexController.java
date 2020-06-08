@@ -31,12 +31,6 @@ public class IndexController {
         return "index";
     }
 
-//    @GetMapping("/")
-//    public String Rank(Model model, @LoginUser SessionUser user) {
-//        model.addAttribute("rank", rankService.findRank());
-//        return "index";
-//    }
-
     @GetMapping("/posts/save")
     public String postsSave(){
         return "posts-save";
