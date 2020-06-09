@@ -4,13 +4,11 @@ import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.RankService;
-import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpSession;
 
@@ -21,16 +19,9 @@ public class IndexController {
     private final PostsService postsService;
     private final RankService rankService;
     private final HttpSession httpSession;
-    private final ShopService shopService;
 
 
-    @GetMapping("/posts/shop")
-    public String postsShop(Model model) {
 
-        model.addAttribute("shop", shopService.findShop());
-
-        return "posts-shop";
-    }
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
