@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ShopRepository extends JpaRepository<Shop, Long> {
 
-    @Query("SELECT s FROM Shop s ORDER BY s.item_type DESC")
+    @Query("SELECT s FROM Shop s")
     List<Shop> findShop();
 
 }
