@@ -30,6 +30,11 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
         }
         model.addAttribute("rank", rankService.findRank());
+        return "index";
+    }
+
+    @GetMapping("/#shop")
+    public String postsShop(Model model){
         model.addAttribute("shop", shopService.findItem());
         return "index";
     }
