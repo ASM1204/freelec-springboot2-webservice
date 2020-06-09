@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<h1>게시글 수정</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        {{#shop}}
+            <section>
+                <div class="row">
+                    <div class="4u 12u$(mobile)">
+                        <a href="#" class="image fit"><img
+                                src={{item_image}}
+                                alt=""></a>{{item_name}}{{item_type}}{{item_price}}
+                    </div>
+
+                </div>
+            </section>
+        {{/shop}}
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+    </div>
+</div>
+
+
+{{>layout/footer}}
