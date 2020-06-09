@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ItemRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT i FROM User i")
+    @Query("SELECT i FROM shop i")
     List<User> findItem();
 
 }
