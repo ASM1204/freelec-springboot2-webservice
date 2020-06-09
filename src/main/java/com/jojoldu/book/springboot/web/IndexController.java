@@ -36,7 +36,7 @@ public class IndexController {
     @GetMapping("/#shop")
     public String postsShop(Model model){
         model.addAttribute("shop", shopService.findItem());
-        return "index";
+        return "posts-shop";
     }
 
     @GetMapping("/posts/save")
