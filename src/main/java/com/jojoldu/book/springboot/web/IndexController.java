@@ -26,9 +26,8 @@ public class IndexController {
 
     @GetMapping("/posts/shop")
     public String postsShop(@PathVariable Long id, Model model) {
-        PostsResponseDto dto = postsService.findById(id);
+
         model.addAttribute("shop", shopService.findShop());
-        model.addAttribute("shopdto", dto);
 
         return "posts-shop";
     }
