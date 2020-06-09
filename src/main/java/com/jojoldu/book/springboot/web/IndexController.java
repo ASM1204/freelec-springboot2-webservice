@@ -4,6 +4,7 @@ import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.RankService;
+import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ public class IndexController {
 
     private final PostsService postsService;
     private final RankService rankService;
+    private final ShopService shopService;
     private final HttpSession httpSession;
 
 
@@ -28,6 +30,7 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
         }
         model.addAttribute("rank", rankService.findRank());
+        model.addAttribute("shop", shopService.findItem());
         return "index";
     }
 

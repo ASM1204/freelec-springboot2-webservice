@@ -64,61 +64,6 @@
                                 src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic01.jpg"
                                 alt=""></a>
                     </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic02.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic03.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic04.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic05.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic06.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic07.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic08.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic09.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic10.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic11.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic12.jpg"
-                                alt=""></a>
-                    </div>
                 </div>
             </section>
             {{/userName}}
@@ -133,40 +78,18 @@
                 아이템을 구매하면 보다 강력한 플레이가 가능합니다
             </p>
             {{#userName}}
+                {{#shop}}
                 <section>
                     <div class="row">
                         <div class="4u 12u$(mobile)">
                             <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic01.jpg"
-                                    alt=""></a>
+                                    src={{item_image}}
+                                    alt=""></a>{{item_name}}{{item_type}}{{item_price}}
                         </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic02.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u$ 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic03.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic04.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic05.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="4u$ 12u$(mobile)">
-                            <a href="#" class="image fit"><img
-                                    src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic06.jpg"
-                                    alt=""></a>
-                        </div>
+
                     </div>
                 </section>
+                {{/shop}}
             {{/userName}}
         </article>
 
