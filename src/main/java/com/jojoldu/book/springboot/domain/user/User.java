@@ -47,20 +47,6 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String runnerLose;
 
-    //아이템 부분
-    @Column(nullable = false)
-    private String item_name;
-
-    @Column(nullable = false)
-    private String item_image;
-
-    @Column(nullable = false)
-    private String item_type;
-
-    @Column(nullable = false)
-    private String item_price;
-
-
     @Builder
     public User(String name, String email, String picture, Role role) {
         this.name = name;
@@ -86,14 +72,6 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public User Shop(String item_name, String item_image, String item_type, String item_price) {
-        this.item_name = item_name;
-        this.item_image = item_image;
-        this.item_type = item_type;
-        this.item_price = item_price;
-
-        return this;
-    }
 
     public String getRoleKey() {
         return this.role.getKey();
