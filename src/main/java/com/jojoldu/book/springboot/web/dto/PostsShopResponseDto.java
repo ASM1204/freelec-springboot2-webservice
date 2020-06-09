@@ -1,7 +1,5 @@
 package com.jojoldu.book.springboot.web.dto;
 
-import com.jojoldu.book.springboot.domain.item.Item;
-import com.jojoldu.book.springboot.domain.user.User;
 import lombok.Getter;
 
 @Getter
