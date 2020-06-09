@@ -33,7 +33,7 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/#shop")
+    @GetMapping("/posts/shop")
     public String postsShop(Model model){
         model.addAttribute("shop", shopService.findItem());
         return "posts-shop";
