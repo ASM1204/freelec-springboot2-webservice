@@ -25,7 +25,7 @@ public class IndexController {
 
 
     @GetMapping("/posts/shop")
-    public String postsShop(@PathVariable Long id, Model model) {
+    public String postsShop(Model model) {
 
         model.addAttribute("shop", shopService.findShop());
 
