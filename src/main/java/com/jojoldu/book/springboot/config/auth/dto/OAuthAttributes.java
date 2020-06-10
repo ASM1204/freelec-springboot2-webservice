@@ -14,13 +14,9 @@ public class OAuthAttributes {
     private String name;
     private String email;
     private String picture;
-    private String catcherWin;
-    private String catcherLose;
-    private String runnerWin;
-    private String runnerLose;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture, String catcherWin, String catcherLose, String runnerWin, String runnerLose) {
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
@@ -64,10 +60,6 @@ public class OAuthAttributes {
                 .email(email)
                 .picture(picture)
                 .role(Role.USER)
-                .catcherWin(catcherWin)
-                .catcherLose(catcherLose)
-                .runnerWin(runnerWin)
-                .runnerLose(runnerLose)
                 .build();
     }
 }
