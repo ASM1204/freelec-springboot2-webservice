@@ -25,7 +25,7 @@ public class ShopApiController {
     }
 
     @GetMapping("/api/v1/shop/list")
-    public List<ShopListResponseDto> findAll() {
+    public List<ShopListResponseDto> findShop() {
         return shopService.findShop();
     }
 }
