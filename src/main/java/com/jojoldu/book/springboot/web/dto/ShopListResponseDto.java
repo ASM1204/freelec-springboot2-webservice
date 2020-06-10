@@ -12,7 +12,7 @@ public class ShopListResponseDto {
     private String item_name;
     private String item_image;
     private String item_type;
-    private String item_price;
+    private int item_price;
 
     public ShopListResponseDto(Shop entity) {
         this.id = entity.getId();
