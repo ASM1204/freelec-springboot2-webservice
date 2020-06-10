@@ -75,14 +75,14 @@
                 <h2>Shop</h2>
             </header>
             <p>
-                아이템을 구매하면 보다 강력한 플레이가 가능합니다
+                아이템을 구매하면 보다 강력한 플레이가 가능합니다 (구매는 이미지클릭!)
             </p>
             {{#userName}}
                 <section>
                     <div class="row">
                         {{#shop}}
                             <div class="4u 12u$(mobile)">
-                                <a href="#" class="image fit"><img src={{item_image}} alt=""></a>
+                                <a href="/shop/buy/{{id}}" class="image fit"><img src={{item_image}} alt=""></a>
                                 <table class="table table-horizontal table-bordered">
                                     <tr style="text-align:center;">
                                         <td>{{item_name}}</td>

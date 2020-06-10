@@ -6,6 +6,7 @@ import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.RankService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
+import com.jojoldu.book.springboot.web.dto.ShopResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,5 +51,12 @@ public class IndexController {
         model.addAttribute("post", dto);
 
         return "posts-update";
+    }
+
+    @GetMapping("/shop/buy/{id}")
+    public String shopBuy(@PathVariable Long id, Model model) {
+        ShopResponseDto dto = shopService.findById(id);
+        model.addAttribute("buy", dto);
+        return "shop-buy";
     }
 }
