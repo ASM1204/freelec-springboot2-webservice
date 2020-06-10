@@ -25,7 +25,7 @@ public class PostsApiController {
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
-    }
+    }//save 등록 insert~~
 
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
