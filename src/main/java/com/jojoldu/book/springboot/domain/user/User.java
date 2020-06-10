@@ -36,28 +36,24 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Column(nullable = false)
-    private String catcherWin;
+    private String catcher_win;
 
     @Column(nullable = false)
-    private String catcherLose;
+    private String catcher_lose;
 
     @Column(nullable = false)
-    private String runnerWin;
+    private String runner_win;
 
     @Column(nullable = false)
-    private String runnerLose;
-
-    @Column(nullable = false)
-    private String nickName;
+    private String runner_lose;
 
 
     @Builder
-    public User(String name, String email, String picture, Role role, String nickName) {
+    public User(String name, String email, String picture, Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
-        this.nickName = nickName;
     }
 
     public User update(String name, String picture) {
@@ -67,12 +63,12 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public User Rank(String name, String catcherWin, String catcherLose, String runnerWin, String runnerLose){
+    public User Rank(String name, String catcher_win, String catcher_lose, String runner_win, String runner_lose){
         this.name=name;
-        this.catcherWin=catcherWin;
-        this.catcherLose=catcherLose;
-        this.runnerWin=runnerWin;
-        this.runnerLose=runnerLose;
+        this.catcher_win=catcher_win;
+        this.catcher_lose=catcher_lose;
+        this.runner_win=runner_win;
+        this.runner_lose=runner_lose;
         return this;
     }
 

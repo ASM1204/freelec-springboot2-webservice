@@ -6,17 +6,17 @@ import lombok.Getter;
 @Getter
 public class PostsRankResponseDto {
     private String name;
-    private String catcherWin;
-    private String catcherLose;
-    private String runnerWin;
-    private String runnerLose;
+    private String catcher_win;
+    private String catcher_lose;
+    private String runner_win;
+    private String runner_lose;
 
 
     public PostsRankResponseDto(User entity) {
         this.name = entity.getName();
-        this.catcherWin = entity.getCatcherWin();
-        this.catcherLose = entity.getCatcherLose();
-        this.runnerWin = entity.getRunnerWin();
-        this.runnerLose = entity.getRunnerLose();
+        this.catcher_win = entity.getCatcher_win();
+        this.catcher_lose = entity.getCatcher_lose();
+        this.runner_win = entity.getRunner_win();
+        this.runner_lose = entity.getRunner_lose();
     }
 }
