@@ -8,12 +8,12 @@ import lombok.Getter;
 public class UserBuyResponseDto {
 
     private Long id;
-    private String item_name;
+    private int smoke_bomb;
     private int berry;
     private String user_email;
 
     public UserBuyResponseDto(User entity){
-        this.id = entity.getId();
+        this.smoke_bomb = entity.getSmoke_bomb();
         this.user_email=entity.getEmail();
         this.berry = entity.getBerry();
     }

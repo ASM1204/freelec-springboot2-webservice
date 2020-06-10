@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.user;
 
 import com.jojoldu.book.springboot.domain.shop.Shop;
+import com.jojoldu.book.springboot.web.dto.UserBuyResponseDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +15,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
     @Query("SELECT i FROM User i where i.email = :email")
-    List<User> findUser(String email);
+    List<UserBuyResponseDto> findUser(String email);
 
 }
