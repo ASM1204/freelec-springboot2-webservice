@@ -16,10 +16,10 @@ public class ShopResponseDto {
     private int item_price;
 
     public ShopResponseDto(Shop entity){
-        this.id = getId();
-        this.item_name = getItem_name();
-        this.item_image = getItem_image();
-        this.item_type = getItem_type();
-        this.item_price = getItem_price();
+        this.id = entity.getId();
+        this.item_name = entity.getItem_name();
+        this.item_image = entity.getItem_image();
+        this.item_type = entity.getItem_type();
+        this.item_price = entity.getItem_price();
     }
 }
