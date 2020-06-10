@@ -31,9 +31,9 @@ public class ShopService {
         Shop entity = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
         return new ShopBuyResponseDto(entity);
     }
-    public ShopBuyResponseDto findByEmail(String email) {
-        Shop entity = (Shop) userRepository.findUser(email);
-        return new ShopBuyResponseDto(entity);
+    public UserBuyResponseDto findByEmail(String email) {
+        User entity = (User) userRepository.findUser(email);
+        return new UserBuyResponseDto(entity);
     }
 
     @Transactional(readOnly = true)
