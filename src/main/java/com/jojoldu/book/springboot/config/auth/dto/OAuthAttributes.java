@@ -20,7 +20,7 @@ public class OAuthAttributes {
     private String runnerLose;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture, String catcherWin, String catcherLose, String runnerWin, String runnerLose) {
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
