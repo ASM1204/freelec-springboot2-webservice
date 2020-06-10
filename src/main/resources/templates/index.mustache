@@ -78,6 +78,31 @@
                 아이템을 구매하면 보다 강력한 플레이가 가능합니다
             </p>
             {{#userName}}
+                <section>
+                    <div class="row">
+                        <table class="table table-horizontal table-bordered">
+                            <thead class="thead-strong">
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>최종수정일</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            {{#shop}}
+                                <tr class="4u$ 12u$(mobile)">
+                                    <td>{{id}}</td>
+                                    <td>{{item_name}}</td>
+                                    <td>{{item_image}}</td>
+                                    <td>{{item_type}}</td>
+                                    <td>{{item_price}}</td>
+                                </tr>
+                            {{/shop}}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
             {{/userName}}
         </article>
 

@@ -9,12 +9,14 @@ import javax.persistence.Column;
 @Getter
 public class ShopResponseDto {
 
+    private Long id;
     private String item_name;
     private String item_image;
     private String item_type;
     private int item_price;
 
     public ShopResponseDto(Shop entity){
+        this.id = getId();
         this.item_name = getItem_name();
         this.item_image = getItem_image();
         this.item_type = getItem_type();
