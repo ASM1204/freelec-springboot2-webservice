@@ -32,7 +32,7 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
         }
         model.addAttribute("rank", rankService.findRank());
-//        model.addAttribute("shop", shopService.findShop());
+        model.addAttribute("shop", shopService.findShop());
 
         return "index";
     }
