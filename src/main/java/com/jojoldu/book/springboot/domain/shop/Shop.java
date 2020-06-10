@@ -16,13 +16,13 @@ public class Shop extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String item_name;
 
-    @Column(nullable = false)
+    @Column
     private String item_image;
 
-    @Column(nullable = false)
+    @Column
     private String item_type;
 
     @Column(nullable = false)
