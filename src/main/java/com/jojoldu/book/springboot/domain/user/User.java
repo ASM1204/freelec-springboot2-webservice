@@ -48,11 +48,11 @@ public class User extends BaseTimeEntity {
     private int runner_lose;
 
     @Column(nullable = false)
-    private int berry;
+    private String berry;
 
 
     @Builder
-    public User(String name, String email, String picture, Role role, int berry) {
+    public User(String name, String email, String picture, Role role, String berry) {
         this.name = name;
         this.email = email;
         this.picture = picture;

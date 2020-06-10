@@ -14,7 +14,7 @@ public class OAuthAttributes {
     private String name;
     private String email;
     private String picture;
-    private int berry;
+    private String berry;
 
     @Builder
     public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
