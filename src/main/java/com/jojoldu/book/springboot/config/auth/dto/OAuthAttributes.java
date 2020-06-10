@@ -14,18 +14,20 @@ public class OAuthAttributes {
     private String name;
     private String email;
     private String picture;
+    private int berry;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture, int berry) {
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
         this.email = email;
         this.picture = picture;
+        this.berry = berry;
     }
 
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
-        if("naver".equals(registrationId)) {
+        if ("naver".equals(registrationId)) {
             return ofNaver("id", attributes);
         }
 
@@ -60,6 +62,7 @@ public class OAuthAttributes {
                 .email(email)
                 .picture(picture)
                 .role(Role.USER)
+                .berry(berry)
                 .build();
     }
 }
