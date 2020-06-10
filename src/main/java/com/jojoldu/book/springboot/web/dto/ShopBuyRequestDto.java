@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ShopBuyRequestDto {
     private String item_name;
-    private int item_price;
+    private String item_price;
 
     @Builder
-    public ShopBuyRequestDto(String item_name, int item_price) {
+    public ShopBuyRequestDto(String item_name, String item_price) {
         this.item_name = item_name;
         this.item_price = item_price;
     }

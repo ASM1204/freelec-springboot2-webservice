@@ -12,7 +12,7 @@ public class ShopListResponseDto {
     private String item_name;
     private String item_image;
     private String item_type;
-    private int item_price;
+    private String item_price;
 
     public ShopListResponseDto(Shop entity) {
         this.id = entity.getId();
@@ -20,6 +20,5 @@ public class ShopListResponseDto {
         this.item_image = entity.getItem_image();
         this.item_type = entity.getItem_type();
         this.item_price = entity.getItem_price();
-        return;
     }
 }
