@@ -8,15 +8,17 @@ import java.time.LocalDateTime;
 
 @Getter
 public class ShopListResponseDto {
+    private Long id;
     private String item_name;
     private String item_image;
     private String item_type;
     private int item_price;
 
     public ShopListResponseDto(Shop entity) {
-        this.item_name = getItem_name();
-        this.item_image = getItem_image();
-        this.item_type = getItem_type();
-        this.item_price = getItem_price();
+        this.id = entity.getId();
+        this.item_name = entity.getItem_name();
+        this.item_image = entity.getItem_image();
+        this.item_type = entity.getItem_type();
+        this.item_price = entity.getItem_price();
     }
 }
