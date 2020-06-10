@@ -1,6 +1,5 @@
 package com.jojoldu.book.springboot.web;
 
-import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,7 @@ public class ShopApiController {
     }
 
     @GetMapping("/api/v1/shop/{id}")
-    public ShopResponseDto findById(@PathVariable Long id) {
+    public ShopBuyResponseDto findById(@PathVariable Long id) {
         return shopService.findById(id);
     }
 

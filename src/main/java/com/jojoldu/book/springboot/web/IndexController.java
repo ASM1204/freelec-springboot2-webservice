@@ -6,7 +6,7 @@ import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.RankService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
-import com.jojoldu.book.springboot.web.dto.ShopResponseDto;
+import com.jojoldu.book.springboot.web.dto.ShopBuyResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,10 +54,13 @@ public class IndexController {
     }
 
     @GetMapping("/shop/buy/{id}")
-    public String shopBuy(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
-        ShopResponseDto dto = shopService.findById(id);
+    public String shopBuy(@PathVariable Long id, @PathVariable String email, Model model, @LoginUser SessionUser user) {
+        ShopBuyResponseDto dto = shopService.findById(id);
+        ShopBuyResponseDto dto2 = shopService.findByEmail(email);
         model.addAttribute("buy", dto);
-        model.addAttribute("berry", user.getBerry());
+        model.addAttribute("user_buy", dto2);
+        model.addAttribute("my_email", user.getEmail());
+
         return "shop-buy";
     }
 }

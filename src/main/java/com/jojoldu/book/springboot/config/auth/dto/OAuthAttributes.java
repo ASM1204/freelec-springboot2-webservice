@@ -14,7 +14,6 @@ public class OAuthAttributes {
     private String name;
     private String email;
     private String picture;
-    private String berry;
 
     @Builder
     public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
@@ -61,7 +60,6 @@ public class OAuthAttributes {
                 .email(email)
                 .picture(picture)
                 .role(Role.USER)
-                .berry((getBerry()))
                 .build();
     }
 }

@@ -8,16 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ShopBuyRequestDto {
     private Long id;
-    private String item_name;
-    private String item_image;
-    private String item_type;
-    private int item_price;
+    private int my_item_count;
+    private int berry;
+    private String user_email;
 
     @Builder
-    public ShopBuyRequestDto(String item_name, String item_image, String item_type, int item_price) {
-        this.item_name = item_name;
-        this.item_image = item_image;
-        this.item_type = item_type;
-        this.item_price = item_price;
+    public ShopBuyRequestDto(int my_item_count, int berry, String user_email) {
+        this.my_item_count = my_item_count;
+        this.berry = berry;
+        this.user_email = user_email;
     }
 }

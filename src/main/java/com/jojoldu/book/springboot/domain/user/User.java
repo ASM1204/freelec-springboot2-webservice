@@ -48,11 +48,14 @@ public class User extends BaseTimeEntity {
     private int runner_lose;
 
     @Column(nullable = false)
-    private String berry;
+    private int berry;
+
+    @Column(nullable = false)
+    private int smoke_bomb;
 
 
     @Builder
-    public User(String name, String email, String picture, Role role, String berry) {
+    public User(String name, String email, String picture, Role role, int berry) {
         this.name = name;
         this.email = email;
         this.picture = picture;
@@ -74,6 +77,16 @@ public class User extends BaseTimeEntity {
         this.runner_win = runner_win;
         this.runner_lose = runner_lose;
         return this;
+    }
+
+    public void my_berry(String name, int berry) {
+        this.name = name;
+        this.berry = berry;
+    }
+
+    public void buy(int smoke_bomb, int berry) {
+        this.smoke_bomb = smoke_bomb++;
+        this.berry = berry - 100;
     }
 
     public String getRoleKey() {

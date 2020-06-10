@@ -35,9 +35,4 @@ public class Shop extends BaseTimeEntity {
         this.item_type = item_type;
         this.item_price = item_price;
     }
-
-    public void buy(String item_name, int item_price) {
-        this.item_name = item_name;
-        this.item_price = item_price;
-    }
 }
