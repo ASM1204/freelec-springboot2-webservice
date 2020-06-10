@@ -6,10 +6,10 @@ import lombok.Getter;
 @Getter
 public class PostsRankResponseDto {
     private String name;
-    private String catcher_win;
-    private String catcher_lose;
-    private String runner_win;
-    private String runner_lose;
+    private int catcher_win;
+    private int catcher_lose;
+    private int runner_win;
+    private int runner_lose;
 
 
     public PostsRankResponseDto(User entity) {
