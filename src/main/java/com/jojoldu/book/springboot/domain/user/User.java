@@ -60,10 +60,9 @@ public class User extends BaseTimeEntity {
         this.berry = berry;
     }
 
-    public User update(String name, String picture, int berry) {
+    public User update(String name, String picture) {
         this.name = name;
         this.picture = picture;
-        this.berry = berry;
 
         return this;
     }
