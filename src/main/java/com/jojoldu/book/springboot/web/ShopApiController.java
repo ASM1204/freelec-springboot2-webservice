@@ -18,6 +18,11 @@ public class ShopApiController {
         return shopService.buy(id, requestDto);
     }
 
+    @PutMapping("/api/v1/shop/{id}")
+    public Long update(@PathVariable Long id, @RequestBody ShopBuyRequestDto requestDto) {
+        return shopService.buy(id, requestDto);
+    }
+
     @GetMapping("/api/v1/shop/{id}")
     public ShopBuyResponseDto findById(@PathVariable Long id) {
         return shopService.findById(id);

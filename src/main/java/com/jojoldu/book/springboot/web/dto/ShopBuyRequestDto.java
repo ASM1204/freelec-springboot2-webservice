@@ -13,7 +13,8 @@ public class ShopBuyRequestDto {
     private String user_email;
 
     @Builder
-    public ShopBuyRequestDto(int my_item_count, int berry, String user_email) {
+    public ShopBuyRequestDto(Long id, int my_item_count, int berry, String user_email) {
+        this.id = id;
         this.my_item_count = my_item_count;
         this.berry = berry;
         this.user_email = user_email;

@@ -1,5 +1,6 @@
 package com.jojoldu.book.springboot.service.posts;
 
+import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.shop.Shop;
 import com.jojoldu.book.springboot.domain.shop.ShopRepository;
 import com.jojoldu.book.springboot.domain.user.User;
@@ -19,10 +20,11 @@ public class ShopService {
     private final UserRepository userRepository;
 
     @Transactional
-    public String buy(String email, ShopBuyRequestDto requestDto) {
+    public Long buy(Long id, String email, ShopBuyRequestDto requestDto) {
+        Shop shop = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
         User user = (User) userRepository.findUser(requestDto.getUser_email());
         user.buy(requestDto.getMy_item_count(),requestDto.getBerry());
-        return email;
+        return id;
     }
 
     public ShopBuyResponseDto findById(Long id) {
