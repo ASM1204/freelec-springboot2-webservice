@@ -36,7 +36,7 @@ public class Shop extends BaseTimeEntity {
         this.item_price = item_price;
     }
 
-    public Shop List(Long id, String item_name, String item_image, String item_type, int item_price) {
+    public Shop ShopList(Long id, String item_name, String item_image, String item_type, int item_price) {
         this.id = id;
         this.item_name = item_name;
         this.item_image = item_image;

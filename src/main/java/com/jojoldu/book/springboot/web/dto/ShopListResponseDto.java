@@ -20,5 +20,6 @@ public class ShopListResponseDto {
         this.item_image = entity.getItem_image();
         this.item_type = entity.getItem_type();
         this.item_price = entity.getItem_price();
+        return;
     }
 }
