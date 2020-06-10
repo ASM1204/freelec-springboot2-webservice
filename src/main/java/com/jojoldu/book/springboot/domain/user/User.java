@@ -52,12 +52,11 @@ public class User extends BaseTimeEntity {
 
 
     @Builder
-    public User(String name, String email, String picture, Role role, int berry) {
+    public User(String name, String email, String picture, Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
-        this.berry = berry;
     }
 
     public User update(String name, String picture) {
@@ -67,17 +66,12 @@ public class User extends BaseTimeEntity {
         return this;
     }
 
-    public User Rank(String name, int catcher_win, int catcher_lose, int runner_win, int runner_lose) {
-        this.name = name;
-        this.catcher_win = catcher_win;
-        this.catcher_lose = catcher_lose;
-        this.runner_win = runner_win;
-        this.runner_lose = runner_lose;
-        return this;
-    }
-
-    public User Berry(int berry) {
-        this.berry = berry;
+    public User Rank(String name, int catcher_win, int catcher_lose, int runner_win, int runner_lose){
+        this.name=name;
+        this.catcher_win=catcher_win;
+        this.catcher_lose=catcher_lose;
+        this.runner_win=runner_win;
+        this.runner_lose=runner_lose;
         return this;
     }
 

@@ -57,7 +57,6 @@ public class IndexController {
     public String shopBuy(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
         ShopResponseDto dto = shopService.findById(id);
         model.addAttribute("buy", dto);
-        model.addAttribute("berry",user.getBerry());
         return "shop-buy";
     }
 }
