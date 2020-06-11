@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,8 +33,8 @@ public class ShopService {
         return new ShopBuyResponseDto(entity);
     }
     public UserBuyResponseDto findByEmail(String email) {
-        User entity = (User) userRepository.findUser(email);
-        return new UserBuyResponseDto(entity);
+        Collection<UserBuyResponseDto> entity =  userRepository.findUser(email);
+        return new UserBuyResponseDto((User) entity);
     }
 
     @Transactional(readOnly = true)
