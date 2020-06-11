@@ -14,7 +14,7 @@ public class Shop extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long item_id;
 
     @Column(nullable = false)
     private String item_name;

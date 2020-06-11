@@ -55,12 +55,12 @@ public class IndexController {
         return "posts-update";
     }
 
-    @GetMapping("/shop/buy/{id}")
-    public String shopBuy(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+    @GetMapping("/shop/buy/{item_id}")
+    public String shopBuy(@PathVariable Long item_id, @PathVariable Long id, Model model, @LoginUser SessionUser user) {
 
+        ShopBuyResponseDto dto = shopService.findById(item_id);
         model.addAttribute("my_email", user.getEmail());
-        model.addAttribute("user",userService.findById(id) );
-        ShopBuyResponseDto dto = shopService.findById(id);
+        model.addAttribute("user",userService.findById(id));
         model.addAttribute("buy", dto);
 
         return "shop-buy";

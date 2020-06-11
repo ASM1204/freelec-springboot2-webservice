@@ -10,7 +10,7 @@ import javax.persistence.Column;
 @Getter
 public class ShopBuyResponseDto {
 
-    private Long id;
+    private Long item_id;
     private String item_name;
     private String item_image;
     private String item_type;
@@ -18,7 +18,7 @@ public class ShopBuyResponseDto {
     private String user_email;
 
     public ShopBuyResponseDto(Shop entity){
-        this.id = entity.getId();
+        this.item_id = entity.getItem_id();
         this.item_name = entity.getItem_name();
         this.item_image = entity.getItem_image();
         this.item_type = entity.getItem_type();

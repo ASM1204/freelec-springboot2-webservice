@@ -22,13 +22,13 @@ public class ShopService {
     private final UserRepository2 userRepository2;
 
     @Transactional
-    public Long buy(Long id, ShopBuyRequestDto requestDto) {
-        Shop shop = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
-        return id;
+    public Long buy(Long item_id, ShopBuyRequestDto requestDto) {
+        Shop shop = shopRepository.findById(item_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + item_id));
+        return item_id;
     }
 
-    public ShopBuyResponseDto findById(Long id) {
-        Shop entity = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    public ShopBuyResponseDto findById(Long item_id) {
+        Shop entity = shopRepository.findById(item_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + item_id));
         return new ShopBuyResponseDto(entity);
     }
 

@@ -13,14 +13,14 @@ public class ShopApiController {
 
     private final ShopService shopService;
 
-    @PutMapping("/api/v1/shop/{id}")
-    public Long buy(@PathVariable Long id, @RequestBody ShopBuyRequestDto requestDto) {
-        return shopService.buy(id, requestDto);
+    @PutMapping("/api/v1/shop/{item_id}")
+    public Long buy(@PathVariable Long item_id, @RequestBody ShopBuyRequestDto requestDto) {
+        return shopService.buy(item_id, requestDto);
     }
 
-    @GetMapping("/api/v1/shop/{id}")
-    public ShopBuyResponseDto findById(@PathVariable Long id) {
-        return shopService.findById(id);
+    @GetMapping("/api/v1/shop/{item_id}")
+    public ShopBuyResponseDto findById(@PathVariable Long item_id) {
+        return shopService.findById(item_id);
     }
 
     @GetMapping("/api/v1/shop/list")
