@@ -26,5 +26,5 @@ public class ShopBuyResponseDto {
         this.berry = entity.getItem_price();
     }
 
-    }
+
 }
