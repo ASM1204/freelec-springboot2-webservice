@@ -61,7 +61,7 @@ public class IndexController {
 //        UserBuyResponseDto dto2 = shopService.findByEmail(user.getEmail());
         model.addAttribute("buy", dto);
 //        model.addAttribute("user_buy", dto2);
-        model.addAttribute("user",userService.findById(id) );
+       // model.addAttribute("user",userService.findById(id) );
         model.addAttribute("my_email", user.getEmail());
 
         return "shop-buy";
