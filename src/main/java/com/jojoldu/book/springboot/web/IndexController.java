@@ -67,7 +67,7 @@ public class IndexController {
         return "shop-buy";
     }
 }
-//user : user_email, berry, smoke_bomb;
+//user : id, user_email, berry, smoke_bomb;
 //buy : id, item_name, item_image, item_type, item_price;
 //rank :
 //shop :
