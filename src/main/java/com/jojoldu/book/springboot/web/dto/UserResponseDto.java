@@ -5,16 +5,17 @@ import com.jojoldu.book.springboot.domain.user.User;
 import lombok.Getter;
 
 @Getter
-public class UserBuyResponseDto {
+public class UserResponseDto {
 
     private Long id;
-    private int smoke_bomb;
-    private int berry;
     private String user_email;
+    private int berry;
 
-    public UserBuyResponseDto(User entity){
-        this.smoke_bomb = entity.getSmoke_bomb();
+    private int smoke_bomb;
+
+    public UserResponseDto(User entity){
         this.user_email=entity.getEmail();
         this.berry = entity.getBerry();
+        this.smoke_bomb = entity.getSmoke_bomb();
     }
 }

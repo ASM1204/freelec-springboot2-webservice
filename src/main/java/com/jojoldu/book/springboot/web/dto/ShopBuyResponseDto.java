@@ -12,7 +12,6 @@ public class ShopBuyResponseDto {
 
     private Long id;
     private String item_name;
-    private int berry;
     private String item_image;
     private String item_type;
     private int item_price;
@@ -23,7 +22,7 @@ public class ShopBuyResponseDto {
         this.item_name = entity.getItem_name();
         this.item_image = entity.getItem_image();
         this.item_type = entity.getItem_type();
-        this.berry = entity.getItem_price();
+        this.item_price = entity.getItem_price();
     }
 
 

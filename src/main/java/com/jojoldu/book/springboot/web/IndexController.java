@@ -5,9 +5,9 @@ import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.service.posts.RankService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
+import com.jojoldu.book.springboot.service.posts.UserService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import com.jojoldu.book.springboot.web.dto.ShopBuyResponseDto;
-import com.jojoldu.book.springboot.web.dto.UserBuyResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +22,7 @@ public class IndexController {
     private final PostsService postsService;
     private final RankService rankService;
     private final ShopService shopService;
+    private final UserService userService;
     private final HttpSession httpSession;
 
 
@@ -60,8 +61,13 @@ public class IndexController {
 //        UserBuyResponseDto dto2 = shopService.findByEmail(user.getEmail());
         model.addAttribute("buy", dto);
 //        model.addAttribute("user_buy", dto2);
+        model.addAttribute("user",userService.findById(id) );
         model.addAttribute("my_email", user.getEmail());
 
         return "shop-buy";
     }
 }
+//user : user_email, berry, smoke_bomb;
+//buy : id, item_name, item_image, item_type, item_price;
+//rank :
+//shop :

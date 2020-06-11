@@ -17,25 +17,27 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class ShopService {
-    private final ShopRepository shopRepository;
+public class UserService {
     private final UserRepository2 userRepository2;
 
     @Transactional
-    public Long buy(Long id, ShopBuyRequestDto requestDto) {
-        Shop shop = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    public Long buy(Long id, UserRequestDto requestDto) {
+        User user = userRepository2.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+        user.buy(requestDto.getItem_name(), requestDto.getBerry());
         return id;
     }
 
-    public ShopBuyResponseDto findById(Long id) {
-        Shop entity = shopRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
-        return new ShopBuyResponseDto(entity);
+
+    public UserResponseDto findById(Long id) {
+        User entity = userRepository2.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+        return new UserResponseDto(entity);
     }
 
+
     @Transactional(readOnly = true)
-    public List<ShopListResponseDto> findShop() {
-        return shopRepository.findShop().stream()
-                .map(ShopListResponseDto::new)
+    public List<UserResponseDto> findUser() {
+        return userRepository2.findUser().stream()
+                .map(UserResponseDto::new)
                 .collect(Collectors.toList());
     }
 }

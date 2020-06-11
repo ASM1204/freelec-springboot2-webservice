@@ -10,10 +10,10 @@
                     <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
                     <table class="table table-horizontal table-bordered">
                         <tr style="text-align:center;">
-                            <td>{{buy.item_name}}</td>
+                            <td id="item_name">{{buy.item_name}}</td>
                         </tr>
                         <tr style="text-align:center;">
-                            <td>{{buy.item_price}} berry</td>
+                            <td id="item_price">{{buy.item_price}} berry</td>
                         </tr>
                         <tr style="text-align:center;">
                             <td>{{buy.item_type}}</td>
@@ -23,12 +23,12 @@
             </div>
         </section>
         <div>
-            {{buy.berry}}
-            아이템 효과에 대해 서술하자@@@@@@@@@@@@@@@{{my_email}}
+            <span id="berry">{{user.berry}}</span>>
+            아이템 효과에 대해 서술하자@@@@@@@@@@@@@@@<span id="my_email">{{my_email}}</span>
         </div>
 
         <button type="button" class="btn btn-primary" id="btn-update">구매하기</button>
-        <a href="/" role="button" class="btn btn-secondary">구매취소</a>
+        <a href="/#shop" role="button" class="btn btn-secondary">구매취소</a>
     </div>
 </div>
 
