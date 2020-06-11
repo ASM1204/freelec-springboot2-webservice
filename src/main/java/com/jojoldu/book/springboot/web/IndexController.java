@@ -40,6 +40,19 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/user")
+    public String userMy(Model model, @LoginUser SessionUser user) {
+
+        return "user";
+    }
+    @GetMapping("/user/my/{id}")
+    public String userMy(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+
+        ShopBuyResponseDto dto = shopService.findById(id);
+        model.addAttribute("user",userService.findById(id));
+
+        return "user-my";
+    }
 
 
     @GetMapping("/posts/save")
@@ -60,11 +73,12 @@ public class IndexController {
 
         ShopBuyResponseDto dto = shopService.findById(item_id);
         model.addAttribute("my_email", user.getEmail());
-        //model.addAttribute("user",userService.findById(id));
         model.addAttribute("buy", dto);
 
         return "shop-buy";
     }
+
+
 }
 //user : id, user_email, berry, smoke_bomb;
 //buy : id, item_name, item_image, item_type, item_price;
