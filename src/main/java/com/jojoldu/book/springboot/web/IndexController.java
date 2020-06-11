@@ -56,11 +56,11 @@ public class IndexController {
     }
 
     @GetMapping("/shop/buy/{item_id}")
-    public String shopBuy(@PathVariable Long item_id, Long id, Model model, @LoginUser SessionUser user) {
+    public String shopBuy(@PathVariable Long item_id, Model model, @LoginUser SessionUser user) {
 
         ShopBuyResponseDto dto = shopService.findById(item_id);
         model.addAttribute("my_email", user.getEmail());
-        model.addAttribute("user",userService.findById(id));
+        //model.addAttribute("user",userService.findById(id));
         model.addAttribute("buy", dto);
 
         return "shop-buy";
