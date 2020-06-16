@@ -37,6 +37,7 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
+        model.addAttribute("all_user",userService.findUser());
 
         return "index";
     }
