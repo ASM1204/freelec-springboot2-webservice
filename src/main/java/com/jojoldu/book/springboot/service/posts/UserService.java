@@ -21,15 +21,15 @@ public class UserService {
     private final UserRepository2 userRepository2;
 
     @Transactional
-    public Long buy(Long id, UserRequestDto requestDto) {
-        User user = userRepository2.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    public Long buy(Long user_id, UserRequestDto requestDto) {
+        User user = userRepository2.findById(user_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user_id));
         user.buy(requestDto.getItem_name(), requestDto.getBerry());
-        return id;
+        return user_id;
     }
 
 
-    public UserResponseDto findById(Long id) {
-        User entity = userRepository2.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    public UserResponseDto findById(Long user_id) {
+        User entity = userRepository2.findById(user_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user_id));
         return new UserResponseDto(entity);
     }
 

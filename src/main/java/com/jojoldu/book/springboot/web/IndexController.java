@@ -43,16 +43,16 @@ public class IndexController {
     }
 
     @GetMapping("/user")
-    public String userMy(@PathVariable Long userid, Model model) {
-        UserResponseDto dto = userService.findById(userid);
+    public String userMy(@PathVariable Long user_id, Model model) {
+        UserResponseDto dto = userService.findById(user_id);
         model.addAttribute("user",dto);
         return "user";
     }
     @GetMapping("/user/my/{id}")
-    public String userMy(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+    public String userMy(@PathVariable Long user_id, Model model, @LoginUser SessionUser user) {
 
-        ShopBuyResponseDto dto = shopService.findById(id);
-        model.addAttribute("user",userService.findById(id));
+        ShopBuyResponseDto dto = shopService.findById(user_id);
+        model.addAttribute("user",userService.findById(user_id));
 
         return "user-my";
     }

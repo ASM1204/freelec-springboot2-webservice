@@ -12,7 +12,7 @@ import javax.persistence.Enumerated;
 @Getter
 public class UserResponseDto {
 
-    private Long id;
+    private Long user_id;
     private String name;
     private String email;
     private String picture;
@@ -31,7 +31,7 @@ public class UserResponseDto {
     private int smoke_bomb13;
 
     public UserResponseDto(User entity) {
-        this.id = entity.getId();
+        this.user_id = entity.getId();
         this.email = entity.getEmail();
         this.name = entity.getName();
         this.picture = entity.getPicture();
