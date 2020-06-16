@@ -4,6 +4,7 @@ import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -73,7 +74,8 @@ public class User extends BaseTimeEntity {
 
 
     @Builder
-    public User(String name, String email, String picture, Role role) {
+    public User(Long user_id, String name, String email, String picture, Role role) {
+        this.user_id = user_id;
         this.name = name;
         this.email = email;
         this.picture = picture;
