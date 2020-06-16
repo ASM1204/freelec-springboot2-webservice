@@ -11,14 +11,16 @@ import java.util.Map;
 public class OAuthAttributes {
     private Map<String, Object> attributes;
     private String nameAttributeKey;
+    private Long user_id;
     private String name;
     private String email;
     private String picture;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey,Long user_id, String name, String email, String picture) {
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
+        this.user_id = user_id;
         this.name = name;
         this.email = email;
         this.picture = picture;
@@ -56,6 +58,7 @@ public class OAuthAttributes {
 
     public User toEntity() {
         return User.builder()
+                .user_id(user_id)
                 .name(name)
                 .email(email)
                 .picture(picture)
