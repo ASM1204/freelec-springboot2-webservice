@@ -37,22 +37,20 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
-        model.addAttribute("all_user",userService.findUser());
 
         return "index";
     }
 
     @GetMapping("/user")
     public String userMy( Model model) {
-        UserResponseDto dto = (UserResponseDto) userService.findUser();
-        model.addAttribute("user",dto);
+        model.addAttribute("all_user",userService.findUser());
         return "user";
     }
 
-    @GetMapping("/user/my/{user_id}")
+    @GetMapping("/user/my")
     public String userMy(@PathVariable Long user_id, Model model) {
         UserResponseDto dto = userService.findById(user_id);
-        model.addAttribute("user",userService.findById(user_id));
+        model.addAttribute("user_my",userService.findById(user_id));
 
         return "user-my";
     }
