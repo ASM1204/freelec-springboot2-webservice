@@ -31,7 +31,7 @@ public class UserResponseDto {
     private int smoke_bomb13;
 
     public UserResponseDto(User entity) {
-        this.user_id = entity.getId();
+        this.user_id = entity.getUser_id();
         this.email = entity.getEmail();
         this.name = entity.getName();
         this.picture = entity.getPicture();
