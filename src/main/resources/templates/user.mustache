@@ -4,8 +4,58 @@
 
 <div class="col-md-12">
     <div class="col-md-4">
+        <table class="table table-horizontal table-bordered">
+            <tr style="text-align:center;">
+                <td>{{user.id}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.name}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.email}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.role}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.catcher_win}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.catcher_lose}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.runner_win}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.runner_lose}}</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.berry}}berry</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb}} smoke_bomb</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb1}} smoke_bomb1</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb2}} smoke_bomb2</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb3}} smoke_bomb3</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb4}} smoke_bomb4</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb5}} smoke_bomb5</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td>{{user.smoke_bomb13}} smoke_bomb6</td>
+            </tr>
+        </table>
    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        <a href="/user/my/{{id}}" role="button" class="btn btn-secondary">정보</a>
+        <a href="/user/my/{{user.id}}" role="button" class="btn btn-secondary">정보</a>
         <a href="/" role="button" class="btn btn-secondary">뒤로가기</a>
     </div>
 </div>

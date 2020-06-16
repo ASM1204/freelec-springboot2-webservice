@@ -8,6 +8,7 @@ import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.service.posts.UserService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import com.jojoldu.book.springboot.web.dto.ShopBuyResponseDto;
+import com.jojoldu.book.springboot.web.dto.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,8 +42,9 @@ public class IndexController {
     }
 
     @GetMapping("/user")
-    public String userMy(Model model, @LoginUser SessionUser user) {
-
+    public String userMy(@PathVariable Long userid, Model model) {
+        UserResponseDto dto = userService.findById(userid);
+        model.addAttribute("user",dto);
         return "user";
     }
     @GetMapping("/user/my/{id}")
