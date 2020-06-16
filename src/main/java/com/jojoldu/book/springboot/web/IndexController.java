@@ -47,7 +47,7 @@ public class IndexController {
         return "user";
     }
 
-    @GetMapping("/user/my")
+    @GetMapping("/user/my/{user_id}")
     public String userMy(@PathVariable Long user_id, Model model) {
         UserResponseDto dto = userService.findById(user_id);
         model.addAttribute("user_my",userService.findById(user_id));
