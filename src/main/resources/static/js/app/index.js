@@ -63,7 +63,7 @@ var main = {
     buy : function () {
         var data = {
             item_name: $('#item_name').val(),
-            item_price: $('#item_berry').val()
+            item_berry: $('#item_berry').val()
         };
 
         var id = $('#item_id').val();
