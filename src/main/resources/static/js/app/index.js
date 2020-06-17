@@ -71,7 +71,7 @@ var main = {
 
         $.ajax({
             type: 'PUT',
-            //url: '/api/v1/shop/'+id,
+            url: '/api/v1/shop/buy/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
