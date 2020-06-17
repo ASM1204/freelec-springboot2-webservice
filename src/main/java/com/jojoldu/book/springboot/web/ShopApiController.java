@@ -18,8 +18,8 @@ public class ShopApiController {
     private final UserService userService;
 
     @PutMapping("/api/v1/shop/{item_id}")
-    public String buy(String email, @RequestBody UserRequestDto requestDto) {
-        return userService.buy(email, requestDto);
+    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
+        return userService.buy(user.getEmail(), requestDto);
     }
 
 
