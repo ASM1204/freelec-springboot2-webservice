@@ -27,9 +27,17 @@
                     <span><input type="text" class="form-control" id="email" value="{{all_user.email}}" readonly></span>
                     <span>내 베리 <input type="text" class="form-control" id="my_berry" value="{{all_user.berry}}" readonly>@</span>
                     <span id="item_berry">아이템 가격 {{buy.item_price}}@</span>
-                    <span>뺀 가격 <input type="text" class="form-control" id="after_berry" value="<script>
-                    document.write({{all_user.berry}} - {{buy.item_price}});
-                </script>" readonly>@</span>
+                    <script>
+                    var after = function(){
+                        var num1 = {{all_user.berry}};
+                        var num2 = {{buy.item_price}};
+                        var result = num1 + num2;
+                        document.getElementById("after_berry").innerHTML = result;
+                    }
+                    </script>
+                    <span>뺀 가격
+                        <textarea type="text" class="form-control" id="after_berry" readonly></textarea>@
+                    </span>
                 </div>
             </div>
         </section>
