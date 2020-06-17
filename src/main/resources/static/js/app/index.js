@@ -67,7 +67,6 @@ var main = {
         };
 
         var id = $('#item_id').val();
-        var email = $('#email').val();
 
         $.ajax({
             type: 'PUT',
