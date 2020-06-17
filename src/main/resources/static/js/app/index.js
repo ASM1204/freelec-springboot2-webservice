@@ -100,5 +100,12 @@ var main = {
 
 };
 
+var after = function(){
+    var num1 = {{all_user.berry}};
+    var num2 = {{buy.item_price}};
+    var result = num1 + num2;
+    }
+
+
 
 main.init();
