@@ -41,11 +41,11 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/user")
-    public String userMy( Model model) {
-        model.addAttribute("all_user",userService.findUser());
-        return "user";
-    }
+//    @GetMapping("/user")
+//    public String userMy( Model model) {
+//        model.addAttribute("all_user",userService.findUser());
+//        return "user";
+//    }
 
     @GetMapping("/user/my/{user_id}")
     public String userMy(@PathVariable Long user_id, Model model) {
