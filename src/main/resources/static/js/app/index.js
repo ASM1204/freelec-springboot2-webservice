@@ -104,7 +104,8 @@ var after = function(){
     var num1 = {{all_user.berry}};
     var num2 = {{buy.item_price}};
     var result = num1 + num2;
-    }
+    document.getElementById("after_berry").innerHTML = result;
+};
 
 
 
