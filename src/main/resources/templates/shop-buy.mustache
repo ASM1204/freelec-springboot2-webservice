@@ -10,7 +10,7 @@
                     <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
                     <table class="table table-horizontal table-bordered">
                         <tr style="text-align:center;">
-                            <td id="item_id">{{buy.item_id}}</td>
+                            <td><input type="text" class="form-control" id="item_id" value="{{buy.item_id}}" readonly></td>
                         </tr>
                         <tr style="text-align:center;">
                             <td id="item_name">{{buy.item_name}}</td>
@@ -24,8 +24,8 @@
                     </table>
                 </div>
                 <div>
-                    <span id="email">{{all_user.email}}</span>
-                    <span id="my_berry">내 베리 {{all_user.berry}}@</span>
+                    <span><input type="text" class="form-control" id="email" value="{{all_user.email}}" readonly></span>
+                    <span>내 베리 <input type="text" class="form-control" id="my_berry" value="{{all_user.berry}}" readonly>@</span>
                     <span id="item_berry">아이템 가격 {{buy.item_price}}@</span>
                     <span id="after_berry">뺀 가격 <script>
                     document.write({{all_user.berry}} - {{buy.item_price}});
