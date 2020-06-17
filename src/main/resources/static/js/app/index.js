@@ -62,11 +62,12 @@ var main = {
     },
     buy : function () {
         var data = {
-            berry: $('#berry').val(),
-            item_price: $('#item_price').val()
+            item_name: $('#item_name').val(),
+            after_berry: $('#berry').val()
         };
 
-        var id = $('#id').val();
+        var id = $('#item_id').val();
+        var email = $('#email').val();
 
         $.ajax({
             type: 'PUT',
@@ -98,33 +99,6 @@ var main = {
     }
 
 };
-
-var shop = {
-    init : function () {
-        var _this = this;
-
-        $('#btn-update').on('click', function () {
-
-            _this.show_berry();
-        });
-    },
-
-    show_berry : function () {
-              var data = {
-                  my_berry: $('#my_berry').val(),
-                  item_berry: $('#item_berry').val()
-              };
-
-              var after_berry = my_berry - item_berry;
-
-
-
-          }
-
-
-};
-
-
 
 
 main.init();

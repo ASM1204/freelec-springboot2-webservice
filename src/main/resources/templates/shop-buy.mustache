@@ -10,6 +10,9 @@
                     <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
                     <table class="table table-horizontal table-bordered">
                         <tr style="text-align:center;">
+                            <td id="item_id">{{buy.item_id}}</td>
+                        </tr>
+                        <tr style="text-align:center;">
                             <td id="item_name">{{buy.item_name}}</td>
                         </tr>
                         <tr style="text-align:center;">
@@ -21,11 +24,12 @@
                     </table>
                 </div>
                 <div>
+                    <span id="email">{{all_user.email}}</span>
                     <span id="my_berry">내 베리 {{all_user.berry}}@</span>
                     <span id="item_berry">아이템 가격 {{buy.item_price}}@</span>
-                    뺀 가격 <script>
-                    document.write({{all_user.berry}}-{{buy.item_price}});
-                </script>@
+                    <span id="after_berry">뺀 가격 <script>
+                    document.write({{all_user.berry}} - {{buy.item_price}});
+                </script>@</span>
                 </div>
             </div>
         </section>
@@ -34,7 +38,7 @@
             아이템 효과에 대해 서술하자@@@@@@@@@@@@@@@<span id="my_email">{{my_email}}</span>
         </div>
 
-        <button type="button" class="btn btn-primary" id="btn-update">구매하기</button>
+        <button type="button" class="btn btn-primary" id="btn-buy">구매하기</button>
         <a href="/#shop" role="button" class="btn btn-secondary">구매취소</a>
     </div>
 </div>

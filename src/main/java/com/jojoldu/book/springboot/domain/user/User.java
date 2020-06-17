@@ -101,7 +101,7 @@ public class User extends BaseTimeEntity {
         this.berry = berry;
     }
 
-    public void buy(String item_name, int berry) {
+    public void item_add(String item_name, int berry) {
         switch (item_name) {
             case "smoke_bomb":
                 smoke_bomb++;
@@ -125,7 +125,7 @@ public class User extends BaseTimeEntity {
                 smoke_bomb13++;
                 break;
         }
-        this.berry = berry - 100;
+        this.berry = berry;
     }
 
     public String getRoleKey() {
