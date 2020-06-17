@@ -20,6 +20,13 @@
                         </tr>
                     </table>
                 </div>
+                <div>
+                    <span id="my_berry">내 베리 {{all_user.berry}}@</span>
+                    <span id="item_berry">아이템 가격 {{buy.item_price}}@</span>
+                    뺀 가격 <script>
+                    document.write({{all_user.berry}}-{{buy.item_price}});
+                </script>@
+                </div>
             </div>
         </section>
         <div>

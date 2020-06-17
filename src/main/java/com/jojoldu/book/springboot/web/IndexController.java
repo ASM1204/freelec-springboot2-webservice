@@ -37,16 +37,15 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
-        model.addAttribute("all_user",userService.findMy(user.getEmail()));
 
         return "index";
     }
 
-//    @GetMapping("/user")
-//    public String userMy( Model model, @LoginUser SessionUser user) {
-//        model.addAttribute("all_user",userService.findMy(user.getEmail()));
-//        return "user";
-//    }
+    @GetMapping("/user")
+    public String userMy( Model model, @LoginUser SessionUser user) {
+        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+        return "user";
+    }
 
     @GetMapping("/user/my/{user_id}")
     public String userMy(@PathVariable Long user_id, Model model) {
@@ -76,6 +75,7 @@ public class IndexController {
         ShopBuyResponseDto dto = shopService.findById(item_id);
         model.addAttribute("my_email", user.getEmail());
         model.addAttribute("buy", dto);
+        model.addAttribute("all_user",userService.findMy(user.getEmail()));
 
         return "shop-buy";
     }

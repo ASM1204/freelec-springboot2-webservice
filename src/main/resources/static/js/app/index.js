@@ -99,5 +99,32 @@ var main = {
 
 };
 
+var shop = {
+    init : function () {
+        var _this = this;
+
+        $('#btn-update').on('click', function () {
+
+            _this.show_berry();
+        });
+    },
+
+    show_berry : function () {
+              var data = {
+                  my_berry: $('#my_berry').val(),
+                  item_berry: $('#item_berry').val()
+              };
+
+              var after_berry = my_berry - item_berry;
+
+
+
+          }
+
+
+};
+
+
+
 
 main.init();
