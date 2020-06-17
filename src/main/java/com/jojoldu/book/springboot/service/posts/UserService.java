@@ -25,7 +25,7 @@ public class UserService {
     @Transactional
     public String buy(String email, UserRequestDto requestDto) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        user.item_add(requestDto.getItem_name(), requestDto.getBerry());
+        user.item_add(requestDto.getItem_name(), requestDto.getItem_berry());
         return email;
     }
 
