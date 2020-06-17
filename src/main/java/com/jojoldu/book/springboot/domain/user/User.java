@@ -125,7 +125,7 @@ public class User extends BaseTimeEntity {
                 smoke_bomb13++;
                 break;
         }
-        this.berry = berry;
+        this.berry = berry - 100;
     }
 
     public String getRoleKey() {
