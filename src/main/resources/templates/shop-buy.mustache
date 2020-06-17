@@ -13,10 +13,10 @@
                             <td><input type="text" class="form-control" id="item_id" value="{{buy.item_id}}" readonly></td>
                         </tr>
                         <tr style="text-align:center;">
-                            <td id="item_name">{{buy.item_name}}</td>
+                            <td><input type="text" class="form-control" id="item_name" value="{{buy.item_name}}" readonly></td>
                         </tr>
                         <tr style="text-align:center;">
-                            <td id="item_price">{{buy.item_price}} berry</td>
+                            <td>{{buy.item_price}} berry</td>
                         </tr>
                         <tr style="text-align:center;">
                             <td>{{buy.item_type}}</td>
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <span><input type="text" class="form-control" id="email" value="{{all_user.email}}" readonly></span>
-                    <span>내 베리 <input type="text" class="form-control" id="my_berry" value="{{all_user.berry}}" readonly>@</span>
+                    <span>내 베리 <input type="text" class="form-control" id="item_price" value="{{all_user.berry}}" readonly>@</span>
                     <span id="item_berry">아이템 가격 {{buy.item_price}}@</span>
 
                     <span>뺀 가격
