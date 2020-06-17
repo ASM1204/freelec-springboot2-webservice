@@ -1,5 +1,7 @@
 package com.jojoldu.book.springboot.web;
 
+import com.jojoldu.book.springboot.config.auth.LoginUser;
+import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.service.posts.UserService;
 import com.jojoldu.book.springboot.web.dto.*;
@@ -22,8 +24,8 @@ public class ShopApiController {
 
 
     @GetMapping("/api/v1/shop/{item_id}")
-    public ShopBuyResponseDto findById(@PathVariable Long item_id) {
-        return shopService.findById(item_id);
+    public UserResponseDto findEmail(@LoginUser SessionUser user) {
+        return userService.findMy(user.getEmail());
     }
 
     @GetMapping("/api/v1/shop/list")
