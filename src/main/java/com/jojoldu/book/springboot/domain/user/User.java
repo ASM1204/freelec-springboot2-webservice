@@ -105,27 +105,34 @@ public class User extends BaseTimeEntity {
         switch (item_name) {
             case "smoke_bomb":
                 smoke_bomb++;
+                this.berry = berry - 100;
                 break;
             case "smoke_bomb1":
                 smoke_bomb1++;
+                this.berry = berry - 100;
                 break;
             case "smoke_bomb2":
                 smoke_bomb2++;
+                this.berry = berry - 100;
                 break;
             case "smoke_bomb3":
                 smoke_bomb3++;
+                this.berry = berry - 100;
                 break;
             case "smoke_bomb4":
                 smoke_bomb4++;
+                this.berry = berry - 100;
                 break;
             case "smoke_bomb5":
                 smoke_bomb5++;
+                this.berry = berry - 100;
                 break;
             case"smoke_bomb13":
                 smoke_bomb13++;
+                this.berry = berry - 100;
                 break;
         }
-        this.berry = berry - 100;
+
     }
 
     public String getRoleKey() {
