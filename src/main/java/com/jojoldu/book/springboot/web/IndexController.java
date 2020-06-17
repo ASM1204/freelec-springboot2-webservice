@@ -42,8 +42,8 @@ public class IndexController {
     }
 
     @GetMapping("/user")
-    public String userMy( Model model) {
-        model.addAttribute("all_user",userService.findUser());
+    public String userMy( Model model, @LoginUser SessionUser user) {
+        model.addAttribute("all_user",userService.findMy(user.getEmail()));
         return "user";
     }
 

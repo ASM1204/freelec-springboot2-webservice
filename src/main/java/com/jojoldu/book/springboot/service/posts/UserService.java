@@ -1,5 +1,6 @@
 package com.jojoldu.book.springboot.service.posts;
 
+import com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes;
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.shop.Shop;
 import com.jojoldu.book.springboot.domain.shop.ShopRepository;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
     private final UserRepository2 userRepository2;
+    private final UserRepository userRepository;
 
     @Transactional
     public Long buy(Long user_id, UserRequestDto requestDto) {
@@ -33,6 +35,10 @@ public class UserService {
         return new UserResponseDto(entity);
     }
 
+    public UserResponseDto findMy(String email) {
+        User user_info = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
+        return new UserResponseDto(user_info);
+    }
 
     @Transactional(readOnly = true)
     public List<UserResponseDto> findUser() {
