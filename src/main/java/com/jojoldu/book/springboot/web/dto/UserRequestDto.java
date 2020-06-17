@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserRequestDto {
     private String item_name;
-    private int berry;
+    private int item_berry;
 
     @Builder
-    public UserRequestDto(String item_name, int berry) {
+    public UserRequestDto(String item_name, int item_berry) {
         this.item_name = item_name;
-        this.berry = berry;
+        this.item_berry = item_berry;
     }
 }
