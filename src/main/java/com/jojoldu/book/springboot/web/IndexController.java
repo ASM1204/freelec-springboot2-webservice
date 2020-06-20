@@ -35,7 +35,7 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
-        model.addAttribute("auction",auctionService.findAllAuction());
+        //model.addAttribute("auction",auctionService.findAllAuction());
 
         return "index";
     }
