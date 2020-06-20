@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AuctionRepository extends JpaRepository<Auction, Long> {
 
-    @Query("SELECT p FROM Posts p ORDER BY p.auction_id DESC")
+    @Query("SELECT p FROM Auction p ORDER BY p.auction_id DESC")
     List<Auction> findAllAuction();
 
 }
