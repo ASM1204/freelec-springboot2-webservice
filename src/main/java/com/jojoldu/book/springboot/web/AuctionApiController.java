@@ -5,6 +5,7 @@ import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.AuctionService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.service.posts.UserService;
+import com.jojoldu.book.springboot.web.dto.AuctionSaveRequestDto;
 import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
 import com.jojoldu.book.springboot.web.dto.ShopListResponseDto;
 import com.jojoldu.book.springboot.web.dto.UserRequestDto;
@@ -21,8 +22,8 @@ public class AuctionApiController {
     private final UserService userService;
     private final AuctionService auctionService;
 
-    @PostMapping("/api/v1/posts")
-    public Long save(@RequestBody PostsSaveRequestDto requestDto) {
+    @PostMapping("/api/v1/auction")
+    public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
         return auctionService.save(requestDto);
     }//save 등록 insert~~
 
