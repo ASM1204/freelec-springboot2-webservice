@@ -1,0 +1,62 @@
+{{>layout/header}}
+
+<h1>아이템 선택</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+
+        {{#my}}
+            <tr style="text-align:center;">
+                <td>{{name}}님의 아이템 보유현황</td>
+            </tr>
+
+            <tr style="text-align:center;">
+                <label>smoke_bomb : {{smoke_bomb}}개
+                    <input type="text" class="form-control" id="title" value="{{item_list.item_name}}" readonly>
+                    <input type="radio" class="btn btn-primary" name="item_my_count" value="{{smoke_bomb}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb1 : {{smoke_bomb1}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb1}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb2 : {{smoke_bomb2}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb2}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb3 : {{smoke_bomb3}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb3}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb4 : {{smoke_bomb4}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb4}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb5 : {{smoke_bomb5}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb5}}">
+                </label>
+            </tr>
+            <tr style="text-align:center;">
+                <label>smoke_bomb13 : {{smoke_bomb13}}개
+                    <input type="radio" class="btn btn-primary" name="item" value="{{smoke_bomb13}}">
+                </label>
+            </tr>
+        {{/my}}
+        <button type="button" class="btn btn-primary" id="btn-select">선택</button>
+        <a href="/#auction" role="button" class="btn btn-secondary">취소</a>
+
+    </div>
+    <div>
+        {{#item_list}}
+            <input type="text" class="btn btn-primary" name="item_id_list" value="{{item_id}}"readonly>
+            <input type="text" class="btn btn-primary" name="item_name_list" value="{{item_name}}"readonly><br>
+        {{/item_list}}
+    </div>
+</div>
+
+{{>layout/footer}}

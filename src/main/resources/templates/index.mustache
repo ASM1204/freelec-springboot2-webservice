@@ -58,14 +58,36 @@
             </p>
         <section>
             {{#userName}}
-                <div class="row">
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img
-                                src="https://capstone-yjc-bucket.s3.ap-northeast-2.amazonaws.com/images/pic01.jpg"
-                                alt=""></a>
+                <section>
+                    <div class="row">
+                        <table class="table table-horizontal table-striped">
+                            <thead class="thead-strong">
+                            <tr>
+                                <th>번호</th>
+                                <th>이미지</th>
+                                <th>이름</th>
+                                <th>타입</th>
+                                <th>가격</th>
+                                <th>판매자</th>
+                                <th>등록일</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            {{#auction}}
+                                <tr class="4u$ 12u$(mobile)">
+                                    <td>{{auction_id}}</td>
+                                    <td><img src={{item_image}} alt=""></td>
+                                    <td>{{item_name}}</td>
+                                    <td>{{item_type}}</td>
+                                    <td>{{item_price}}</td>
+                                    <td>{{author}}</td>
+                                    <td>{{created_date}}</td>
+                                </tr>
+                            {{/auction}}
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-            </section>
+                </section>
             {{/userName}}
         </article>
 

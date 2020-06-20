@@ -18,6 +18,9 @@ var main = {
         $('#btn-buy').on('click', function () {
             _this.buy();
         });
+        $('#btn-select').on('click', function () {
+            _this.select();
+        });
     },
     save : function () {
         var data = {
@@ -79,7 +82,48 @@ var main = {
             window.location.href = '/#shop';
         }).fail(function (error) {
             alert('아이템을 구매하였습니다.');
-                        window.location.href = '/#shop';
+            window.location.href = '/#shop';
+        });
+    },
+    select : function () {
+        var data = {
+            item_name: $('#item_name').val(),
+            item_berry: $('#item_berry').val()
+        };
+
+        var items = document.getElementsByName('item_my_count');
+        var item_name_list = document.getElementsByName('item_name_list');
+        var item_id_list = document.getElementsByName('item_id_list');
+        for(var i = 0; i < items.length; i++){
+            if(items[i].checked == true){
+                switch(items[i].){
+                    case 0:
+                    alert('@ ' + items[i] + ' @ 보유수량이 너무 적습니다!');
+                    break;
+
+                    default:
+                    data = {
+                        'item_id': item_id_list[i],
+                        'item_name': item_name_list[i]
+                        };
+                    break;
+                }
+            }
+        }
+        var id = $('#item_id').val();
+
+        $.ajax({
+            type: 'PUT',
+            url: '/api/v1/shop/'+id,
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('아이템을 구매하였습니다.');
+            window.location.href = '/#shop';
+        }).fail(function (error) {
+            alert('아이템을 구매하였습니다.');
+            window.location.href = '/#shop';
         });
     },
     delete : function () {

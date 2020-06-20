@@ -2,10 +2,7 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.service.posts.PostsService;
-import com.jojoldu.book.springboot.service.posts.RankService;
-import com.jojoldu.book.springboot.service.posts.ShopService;
-import com.jojoldu.book.springboot.service.posts.UserService;
+import com.jojoldu.book.springboot.service.posts.*;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import com.jojoldu.book.springboot.web.dto.ShopBuyResponseDto;
 import com.jojoldu.book.springboot.web.dto.UserResponseDto;
@@ -24,6 +21,7 @@ public class IndexController {
     private final RankService rankService;
     private final ShopService shopService;
     private final UserService userService;
+    private final AuctionService auctionService;
     private final HttpSession httpSession;
 
 
@@ -37,6 +35,7 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
+        model.addAttribute("auction",auctionService.findAllAuction());
 
         return "index";
     }
@@ -45,6 +44,13 @@ public class IndexController {
     public String userMy( Model model, @LoginUser SessionUser user) {
         model.addAttribute("all_user",userService.findMy(user.getEmail()));
         return "user";
+    }
+
+    @GetMapping("/auction/select")
+    public String auction_item_list( Model model, @LoginUser SessionUser user) {
+        model.addAttribute("item_list",shopService.findShop());
+        model.addAttribute("my",userService.findMy(user.getEmail()));
+        return "auction-select";
     }
 
     @GetMapping("/user/my/{user_id}")
@@ -59,6 +65,11 @@ public class IndexController {
     @GetMapping("/posts/save")
     public String postsSave(){
         return "posts-save";
+    }
+
+    @GetMapping("/auction/save")
+    public String auctionSave(){
+        return "auction-save";
     }
 
     @GetMapping("/posts/update/{id}")
