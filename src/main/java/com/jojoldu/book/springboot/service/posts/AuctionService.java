@@ -31,11 +31,6 @@ public class AuctionService {
         return auctionRepository.save(requestDto.toEntity()).getAuction_id();
     }
 
-    @Transactional
-    public Long buy(Long item_id, ShopBuyRequestDto requestDto) {
-        Shop shop = shopRepository.findById(item_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + item_id));
-        return item_id;
-    }
 
     public AuctionResponseDto findByEmail(@LoginUser SessionUser user) {
         User entity = userRepository.findByEmail(user.getEmail()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user));

@@ -5,10 +5,7 @@ import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.AuctionService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.service.posts.UserService;
-import com.jojoldu.book.springboot.web.dto.AuctionSaveRequestDto;
-import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
-import com.jojoldu.book.springboot.web.dto.ShopListResponseDto;
-import com.jojoldu.book.springboot.web.dto.UserRequestDto;
+import com.jojoldu.book.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,8 +35,8 @@ public class AuctionApiController {
 //        return userService.findMy(user.getEmail());
 //    }
 
-    @GetMapping("/api/v1/shop/list")
-    public List<ShopListResponseDto> findShop() {
-        return shopService.findShop();
+    @GetMapping("/api/v1/auction/list")
+    public List<AuctionListResponseDto> findAllAuction() {
+        return auctionService.findAllAuction();
     }
 }
