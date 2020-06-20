@@ -23,10 +23,10 @@ public class ShopApiController {
     }
 
 
-    @GetMapping("/api/v1/shop/{item_id}")
-    public UserResponseDto findEmail(@LoginUser SessionUser user) {
-        return userService.findMy(user.getEmail());
-    }
+//    @GetMapping("/api/v1/shop/{item_id}")
+//    public UserResponseDto findEmail(@LoginUser SessionUser user) {
+//        return userService.findMy(user.getEmail());
+//    }
 
     @GetMapping("/api/v1/shop/list")
     public List<ShopListResponseDto> findShop() {
