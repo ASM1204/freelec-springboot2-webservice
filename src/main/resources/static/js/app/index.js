@@ -77,7 +77,10 @@ var main = {
         }).done(function() {
             alert('아이템을 구매하였습니다.');
             window.location.href = '/#shop';
-        })
+        }).fail(function (error) {
+            alert('아이템을 구매하였습니다.');
+                        window.location.href = '/#shop';
+        });
     },
     delete : function () {
         var id = $('#id').val();
