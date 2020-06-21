@@ -96,7 +96,7 @@ var main = {
         var item_id_list = document.getElementsByName('item_id_list');
         for(var i = 0; i < items.length; i++){
             if(items[i].checked == true){
-                switch(items[i].){
+                switch(items[i]){
                     case 0:
                     alert('@ ' + items[i] + ' @ 보유수량이 너무 적습니다!');
                     break;
