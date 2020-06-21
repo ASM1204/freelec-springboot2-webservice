@@ -93,7 +93,7 @@ var main = {
         var item_id_list = document.getElementsByName('item_id_list');
         for(var i = 0; i < items.length; i++){
             if(items[i].checked == true){
-                switch(items[i].value){
+                switch(parseInt(items[i].value)){
                     case 0:
                     alert('@ ' + items[i].val + ' @ 보유수량이 너무 적습니다!');
                     break;
