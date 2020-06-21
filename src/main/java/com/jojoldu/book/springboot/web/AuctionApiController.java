@@ -26,7 +26,7 @@ public class AuctionApiController {
 
     @PutMapping("/api/v1/auction")
     public String sell_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
-        return auctionService.sell_item(user.getEmail(), requestDto);
+        return userService.sell_item(user.getEmail(), requestDto);
     }
 
     @GetMapping("/api/v1/auction/list")

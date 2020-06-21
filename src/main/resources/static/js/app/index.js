@@ -123,6 +123,18 @@ var main = {
                             alert(JSON.stringify(error));
                             window.location.href = '/#auction';
                         });
+
+                        var data_ = {
+                            item_name: item_name_list[i].value
+                            };
+
+                        $.ajax({
+                            type: 'PUT',
+                            url: '/api/v1/auction',
+                            dataType: 'json',
+                            contentType:'application/json; charset=utf-8',
+                            data: JSON.stringify(data_)
+                        }));
                     break;
                 }
             }

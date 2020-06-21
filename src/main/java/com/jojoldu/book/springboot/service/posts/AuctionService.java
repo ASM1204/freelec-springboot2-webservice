@@ -26,12 +26,7 @@ public class AuctionService {
     private final UserRepository2 userRepository2;
     private final AuctionRepository auctionRepository;
 
-    @Transactional
-    public String sell_item(String email, UserAuctionRequestDto requestDto) {
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        user.select_item(requestDto.getItem_name());
-        return email;
-    }
+
 
     @Transactional
     public Long auction_save(AuctionSaveRequestDto requestDto) {
