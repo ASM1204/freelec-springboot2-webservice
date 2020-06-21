@@ -99,7 +99,7 @@ var main = {
                     break;
 
                     default:
-                    alert('@item_name '+item_name_list[i]+'@item_id = '+item_id_list[i]+'@item_my_count = ' + items[i].val + ' @ 보유수량이 너무 많습니다!');
+                    alert('@item_name '+item_name_list[i].value+'@item_id = '+item_id_list[i].value+'@item_my_count = ' + items[i].value + ' @ 보유수량이 너무 많습니다!');
 //                    data = {
 //                        'item_id': item_id_list[i],
 //                        'item_name': item_name_list[i]
