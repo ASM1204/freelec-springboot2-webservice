@@ -134,7 +134,7 @@ var main = {
                             dataType: 'json',
                             contentType:'application/json; charset=utf-8',
                             data: JSON.stringify(data_)
-                        }));
+                        });
                     break;
                 }
             }
