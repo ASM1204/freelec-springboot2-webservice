@@ -93,6 +93,7 @@ var main = {
         var item_name_list = document.getElementsByName('item_name_list');
         var item_type_list = document.getElementsByName('item_type_list');
         var item_id_list = document.getElementsByName('item_id_list');
+
         for(var i = 0; i < items.length; i++){
             if(items[i].checked == true){
                 switch(parseInt(items[i].value)){
