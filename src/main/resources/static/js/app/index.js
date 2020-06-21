@@ -110,21 +110,7 @@ var main = {
                 }
             }
         }
-        var id = $('#item_id').val();
 
-        $.ajax({
-            type: 'PUT',
-            url: '/api/v1/shop/'+id,
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('아이템을 구매하였습니다.');
-            window.location.href = '/#shop';
-        }).fail(function (error) {
-            alert('아이템을 구매하였습니다.');
-            window.location.href = '/#shop';
-        });
     },
     delete : function () {
         var id = $('#id').val();
