@@ -47,7 +47,7 @@ public class IndexController {
     }
 
     @GetMapping("/auction/select")
-    public String auction_item_list( Model model, @LoginUser SessionUser user) {
+    public String auction_select( Model model, @LoginUser SessionUser user) {
         model.addAttribute("item_list",shopService.findShop());
         model.addAttribute("my",userService.findMy(user.getEmail()));
         return "auction-select";
