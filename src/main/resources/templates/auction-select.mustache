@@ -5,6 +5,7 @@
 <div class="col-md-12">
     <div class="col-md-4">
 
+
         {{#my}}
             <tr style="text-align:center;">
                 <td>{{name}}님의 아이템 보유현황</td>
@@ -12,7 +13,6 @@
 
             <tr style="text-align:center;">
                 <label>smoke_bomb : {{smoke_bomb}}개
-                    <input type="text" class="form-control" id="title" value="{{item_list.item_name}}" readonly>
                     <input type="radio" class="btn btn-primary" name="item_my_count" value="{{smoke_bomb}}">
                 </label>
             </tr>
@@ -52,6 +52,11 @@
 
     </div>
     <div>
+        {{#item_list}}
+            <input type="text" class="btn btn-primary" name="item_id_list" value="{{item_id}}"readonly>
+            <input type="text" class="btn btn-primary" name="item_name_list" value="{{item_name}}"readonly><br>
+        {{/item_list}}
+    </div>    <div>
         {{#item_list}}
             <input type="text" class="btn btn-primary" name="item_id_list" value="{{item_id}}"readonly>
             <input type="text" class="btn btn-primary" name="item_name_list" value="{{item_name}}"readonly><br>
