@@ -24,17 +24,6 @@ public class AuctionApiController {
         return auctionService.save(requestDto);
     }//save 등록 insert~~
 
-    @PutMapping("/api/v1/shop/{item_id}")
-    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
-        return userService.buy(user.getEmail(), requestDto);
-    }
-
-
-//    @GetMapping("/api/v1/shop/{item_id}")
-//    public UserResponseDto findEmail(@LoginUser SessionUser user) {
-//        return userService.findMy(user.getEmail());
-//    }
-
     @GetMapping("/api/v1/auction/list")
     public List<AuctionListResponseDto> findAllAuction() {
         return auctionService.findAllAuction();

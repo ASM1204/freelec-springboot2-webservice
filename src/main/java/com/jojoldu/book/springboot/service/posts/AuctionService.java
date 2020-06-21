@@ -31,12 +31,6 @@ public class AuctionService {
         return auctionRepository.save(requestDto.toEntity()).getAuction_id();
     }
 
-
-    public AuctionResponseDto findByEmail(@LoginUser SessionUser user) {
-        User entity = userRepository.findByEmail(user.getEmail()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user));
-        return new AuctionResponseDto(entity);
-    }
-
     @Transactional(readOnly = true)
     public List<AuctionListResponseDto> findAllAuction() {
         return auctionRepository.findAllAuction().stream()
