@@ -21,7 +21,7 @@ public class AuctionApiController {
 
     @PostMapping("/api/v1/auction")
     public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
-        return auctionService.save(requestDto);
+        return auctionService.auction_save(requestDto);
     }//save 등록 insert~~
 
     @PutMapping("/api/v1/auction")

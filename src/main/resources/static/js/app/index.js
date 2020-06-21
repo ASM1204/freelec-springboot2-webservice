@@ -89,7 +89,7 @@ var main = {
     select : function () {
 
         var items = document.getElementsByName('item_my_count');
-        var item_iamge_list = document.getElementsByName('item_image_list');
+        var item_image_list = document.getElementsByName('item_image_list');
         var item_name_list = document.getElementsByName('item_name_list');
         var item_type_list = document.getElementsByName('item_type_list');
         var item_id_list = document.getElementsByName('item_id_list');
@@ -103,8 +103,8 @@ var main = {
                     default:
 
                         var data = {
-                            item_image: item_image_list[i].value,
                             item_name: item_name_list[i].value,
+                            item_image: item_image_list[i].value,
                             item_type: item_type_list[i].value,
                             item_price: $('#sell_price').val()
                             author: $('#select_my_email').val()

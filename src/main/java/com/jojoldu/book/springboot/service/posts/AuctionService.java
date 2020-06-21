@@ -34,7 +34,7 @@ public class AuctionService {
     }
 
     @Transactional
-    public Long save(AuctionSaveRequestDto requestDto) {
+    public Long auction_save(AuctionSaveRequestDto requestDto) {
         return auctionRepository.save(requestDto.toEntity()).getAuction_id();
     }
 

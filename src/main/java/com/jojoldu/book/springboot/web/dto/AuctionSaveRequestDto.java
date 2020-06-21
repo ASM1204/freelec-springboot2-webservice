@@ -16,9 +16,9 @@ public class AuctionSaveRequestDto {
     private String author;
 
     @Builder
-    public AuctionSaveRequestDto(String item_image, String item_name, String item_type, int item_price, String author) {
-        this.item_image = item_image;
+    public AuctionSaveRequestDto(String item_name, String item_image, String item_type, int item_price, String author) {
         this.item_name = item_name;
+        this.item_image = item_image;
         this.item_type = item_type;
         this.item_price = item_price;
         this.author = author;
@@ -26,8 +26,8 @@ public class AuctionSaveRequestDto {
 
     public Auction toEntity() {
         return Auction.builder()
-                .item_image(item_image)
                 .item_name(item_name)
+                .item_image(item_image)
                 .item_type(item_type)
                 .item_price(item_price)
                 .author(author)
