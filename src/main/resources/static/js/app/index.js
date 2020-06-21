@@ -95,11 +95,11 @@ var main = {
             if(items[i].checked == true){
                 switch(items[i]){
                     case 0:
-                    alert('@ ' + items[i] + ' @ 보유수량이 너무 적습니다!');
+                    alert('@ ' + items[i].val + ' @ 보유수량이 너무 적습니다!');
                     break;
 
                     default:
-                    alert('@ ' + items[i] + ' @ 보유수량이 너무 많습니다!');
+                    alert('@item_name '+item_name_list[i]+'@item_id = '+item_id_list[i]+'@item_my_count = ' + items[i].val + ' @ 보유수량이 너무 많습니다!');
 //                    data = {
 //                        'item_id': item_id_list[i],
 //                        'item_name': item_name_list[i]
