@@ -18,6 +18,7 @@ var main = {
         $('#btn-buy').on('click', function () {
             _this.buy();
         });
+
         $('#btn-select').on('click', function () {
             _this.select();
         });
@@ -37,7 +38,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             window.location.reload(true);
-            window.location.href = 'http://ec2-3-34-71-14.ap-northeast-2.compute.amazonaws.com/#board';
+            window.location.href = '/#board';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -86,10 +87,6 @@ var main = {
         });
     },
     select : function () {
-        var data = {
-            item_name: $('#item_name').val(),
-            item_berry: $('#item_berry').val()
-        };
 
         var items = document.getElementsByName('item_my_count');
         var item_name_list = document.getElementsByName('item_name_list');
@@ -102,10 +99,11 @@ var main = {
                     break;
 
                     default:
-                    data = {
-                        'item_id': item_id_list[i],
-                        'item_name': item_name_list[i]
-                        };
+                    alert('@ ' + items[i] + ' @ 보유수량이 너무 많습니다!');
+//                    data = {
+//                        'item_id': item_id_list[i],
+//                        'item_name': item_name_list[i]
+//                        };
                     break;
                 }
             }
