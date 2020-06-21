@@ -107,7 +107,7 @@ var main = {
                             item_name: item_name_list[i].value,
                             item_image: item_image_list[i].value,
                             item_type: item_type_list[i].value,
-                            item_price: $('#sell_price').val()
+                            item_price: $('#sell_price').val(),
                             author: $('#select_my_email').val()
                             };
 
