@@ -34,10 +34,7 @@ public class AuctionService {
     }
 
     @Transactional
-    public Long save(Long item_id, String email, AuctionSaveRequestDto requestDto) {
-        Shop entity = shopRepository.findById(item_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + item_id));
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        requestDto.builder().entity(entity).user(user).build();
+    public Long save(AuctionSaveRequestDto requestDto) {
         return auctionRepository.save(requestDto.toEntity()).getAuction_id();
     }
 
