@@ -20,9 +20,14 @@ public class AuctionApiController {
     private final AuctionService auctionService;
 
     @PostMapping("/api/v1/auction")
-    public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
-        return auctionService.save(requestDto);
+    public Long save(@LoginUser SessionUser user, Long item_id, @RequestBody AuctionSaveRequestDto requestDto) {
+        return auctionService.save(item_id, user.getEmail(),requestDto);
     }//save 등록 insert~~
+
+    @PutMapping("/api/v1/auction")
+    public String sell_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
+        return auctionService.sell_item(user.getEmail(), requestDto);
+    }
 
     @GetMapping("/api/v1/auction/list")
     public List<AuctionListResponseDto> findAllAuction() {

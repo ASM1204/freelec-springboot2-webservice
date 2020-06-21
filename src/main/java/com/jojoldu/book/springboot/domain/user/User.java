@@ -132,7 +132,31 @@ public class User extends BaseTimeEntity {
                 berry -= item_berry;
                 break;
         }
-
+    }
+    public void select_item(String item_name) {
+        switch (item_name) {
+            case "smoke_bomb":
+                smoke_bomb--;
+                break;
+            case "smoke_bomb1":
+                smoke_bomb1--;
+                break;
+            case "smoke_bomb2":
+                smoke_bomb2--;
+                break;
+            case "smoke_bomb3":
+                smoke_bomb3--;
+                break;
+            case "smoke_bomb4":
+                smoke_bomb4--;
+                break;
+            case "smoke_bomb5":
+                smoke_bomb5--;
+                break;
+            case"smoke_bomb13":
+                smoke_bomb13--;
+                break;
+        }
     }
 
     public String getRoleKey() {

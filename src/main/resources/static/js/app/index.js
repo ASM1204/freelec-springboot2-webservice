@@ -95,15 +95,26 @@ var main = {
             if(items[i].checked == true){
                 switch(parseInt(items[i].value)){
                     case 0:
-                    alert('@ ' + items[i].val + ' @ 보유수량이 너무 적습니다!');
-                    break;
+                        alert('@ ' + items[i].val + ' @ 보유수량이 너무 적습니다!');
+                        break;
 
                     default:
-                    alert('@item_name '+item_name_list[i].value+'@item_id = '+item_id_list[i].value+'@item_my_count = ' + items[i].value + ' @ 보유수량이 너무 많습니다!');
-//                    data = {
-//                        'item_id': item_id_list[i],
-//                        'item_name': item_name_list[i]
-//                        };
+                        var data = {
+                            item_id: item_id_list[i].value,
+                            item_name: item_name_list[i].value,
+                            item_price: $('#sell_price').val()
+                            };
+                            $.ajax({
+                                    type: 'PUT',
+                                    url: '/api/v1/auction',
+                                    dataType: 'json',
+                                    contentType:'application/json; charset=utf-8',
+                                    data: JSON.stringify(data)
+                                }).done(function() {
+                                    window.location.href = '/#auction';
+                                }).fail(function (error) {
+                                    window.location.href = '/#shop';
+                                });
                     break;
                 }
             }
