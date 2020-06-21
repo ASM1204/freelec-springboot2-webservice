@@ -111,17 +111,18 @@ var main = {
                             author: $('#select_my_email').val()
                             };
 
-                            $.ajax({
-                                    type: 'PUT',
-                                    url: '/api/v1/auction',
-                                    dataType: 'json',
-                                    contentType:'application/json; charset=utf-8',
-                                    data: JSON.stringify(data)
-                                }).done(function() {
-                                    window.location.href = '/#auction';
-                                }).fail(function (error) {
-                                    window.location.href = '/#auction';
-                                });
+                        $.ajax({
+                            type: 'POST',
+                            url: '/api/v1/auction',
+                            dataType: 'json',
+                            contentType:'application/json; charset=utf-8',
+                            data: JSON.stringify(data)
+                        }).done(function() {
+                            window.location.href = '/#auction';
+                        }).fail(function (error) {
+                            alert(JSON.stringify(error));
+                            window.location.href = '/#auction';
+                        });
                     break;
                 }
             }
