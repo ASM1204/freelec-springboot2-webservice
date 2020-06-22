@@ -168,7 +168,7 @@ var main = {
                     alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
                     window.location.href = '/#auction';
                 }).fail(function (error) {
-                    alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
+                    alert('아이템을 실패하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
                     window.location.href = '/#auction';
                 });
 
