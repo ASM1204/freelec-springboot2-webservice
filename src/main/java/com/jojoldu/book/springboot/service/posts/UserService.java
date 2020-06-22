@@ -49,10 +49,10 @@ public class UserService {
     }
 
     @Transactional
-    public String sell_item(@LoginUser SessionUser email, UserAuctionPostItemRequestDto requestDto) {
-        User user = userRepository.findByEmail(email.getEmail()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
+    public String sell_item(String email, UserAuctionPostItemRequestDto requestDto) {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
         user.select_item(requestDto.getItem_name());
-        return email.getEmail();
+        return email;
     }// 아이템 판매등록해서 개수 줄이기
 
     @Transactional(readOnly = true)
