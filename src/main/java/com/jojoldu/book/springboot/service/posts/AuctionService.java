@@ -33,6 +33,11 @@ public class AuctionService {
         return auctionRepository.save(requestDto.toEntity()).getAuction_id();
     }
 
+    public AuctionBuyResponseDto findById(Long auction_id) {
+        Auction entity = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
+        return new AuctionBuyResponseDto(entity);
+    }
+
     @Transactional(readOnly = true)
     public List<AuctionListResponseDto> findAllAuction() {
         return auctionRepository.findAllAuction().stream()

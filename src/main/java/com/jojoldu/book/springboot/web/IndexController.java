@@ -3,6 +3,7 @@ package com.jojoldu.book.springboot.web;
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.*;
+import com.jojoldu.book.springboot.web.dto.AuctionBuyResponseDto;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import com.jojoldu.book.springboot.web.dto.ShopBuyResponseDto;
 import com.jojoldu.book.springboot.web.dto.UserResponseDto;
@@ -89,7 +90,7 @@ public class IndexController {
     @GetMapping("/auction/buy/{auction_id}")
     public String auctionBuy(@PathVariable Long auction_id, Model model, @LoginUser SessionUser user) {
 
-        ShopBuyResponseDto dto = shopService.findById(auction_id);
+        AuctionBuyResponseDto dto = auctionService.findById(auction_id);
         model.addAttribute("my_email", user.getEmail());
         model.addAttribute("buy", dto);
         model.addAttribute("all_user",userService.findMy(user.getEmail()));
