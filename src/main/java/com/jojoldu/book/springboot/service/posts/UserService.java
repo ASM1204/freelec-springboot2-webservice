@@ -51,7 +51,7 @@ public class UserService {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
         user.select_item(requestDto.getItem_name());
         return email;
-    }
+    }// 아이템 판매등록해서 개수 줄이기
 
     @Transactional(readOnly = true)
     public List<UserResponseDto> findUser() {
