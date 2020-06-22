@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserAuctionSellRequestDto {
     private String email;
-    private int item_price;
+    private int item_berry;
 
     @Builder
-    public UserAuctionSellRequestDto(String email, int item_price) {
+    public UserAuctionSellRequestDto(String email, int item_berry) {
         this.email = email;
-        this.item_price = item_price;
+        this.item_berry = item_berry;
     }
 }

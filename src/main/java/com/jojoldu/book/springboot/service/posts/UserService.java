@@ -32,7 +32,7 @@ public class UserService {
     @Transactional
     public String sell_get_berry(String email, UserAuctionSellRequestDto requestDto) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        user.item_sell_get_berry(requestDto.getItem_price());
+        user.item_sell_get_berry(requestDto.getItem_berry());
         return email;
     }
 
