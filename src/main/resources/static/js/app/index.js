@@ -22,6 +22,10 @@ var main = {
         $('#btn-select').on('click', function () {
             _this.select();
         });
+
+        $('#btn-trade').on('click', function () {
+            _this.trade();
+        });
     },
     save : function () {
         var data = {
@@ -139,8 +143,38 @@ var main = {
                 }
             }
         }
-
     },
+    trade : function () {
+            var item_price = $('#item_berry').val()
+            var item_price = $('#item_berry').val()
+            var item_type_list = document.getElementsByName('item_type_list');
+            if()
+            var data = {
+                item_name: $('#item_name').val(),
+                item_berry: $('#item_berry').val()
+            };
+            var data_ = {
+                item_name: $('#item_name').val(),
+                item_berry: $('#item_berry').val(),
+                email: $('#author').val()
+            };
+
+            var id = $('#item_id').val();
+
+            $.ajax({
+                type: 'PUT',
+                url: '/api/v1/auction/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('아이템을 구매하였습니다.');
+                window.location.href = '/#auction';
+            }).fail(function (error) {
+                alert('아이템을 구매하였습니다.');
+                window.location.href = '/#auction';
+            });
+        }
     delete : function () {
         var id = $('#id').val();
 
