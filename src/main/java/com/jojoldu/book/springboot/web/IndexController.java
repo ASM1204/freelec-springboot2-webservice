@@ -67,11 +67,6 @@ public class IndexController {
         return "posts-save";
     }
 
-    @GetMapping("/auction/save")
-    public String auctionSave(){
-        return "auction-save";
-    }
-
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
@@ -84,6 +79,17 @@ public class IndexController {
     public String shopBuy(@PathVariable Long item_id, Model model, @LoginUser SessionUser user) {
 
         ShopBuyResponseDto dto = shopService.findById(item_id);
+        model.addAttribute("my_email", user.getEmail());
+        model.addAttribute("buy", dto);
+        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+
+        return "shop-buy";
+    }
+
+    @GetMapping("/auction/buy/{auction_id}")
+    public String auctionBuy(@PathVariable Long auction_id, Model model, @LoginUser SessionUser user) {
+
+        ShopBuyResponseDto dto = shopService.findById(auction_id);
         model.addAttribute("my_email", user.getEmail());
         model.addAttribute("buy", dto);
         model.addAttribute("all_user",userService.findMy(user.getEmail()));
