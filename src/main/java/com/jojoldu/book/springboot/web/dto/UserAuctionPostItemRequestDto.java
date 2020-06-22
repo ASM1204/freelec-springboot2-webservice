@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class UserAuctionRequestDto {
+public class UserAuctionPostItemRequestDto {
     private String item_name;
 
     @Builder
-    public UserAuctionRequestDto(String item_name) {
+    public UserAuctionPostItemRequestDto(String item_name) {
         this.item_name = item_name;
     }
 }

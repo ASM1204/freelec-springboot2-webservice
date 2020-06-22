@@ -1,11 +1,7 @@
 package com.jojoldu.book.springboot.service.posts;
 
-import com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes;
 import com.jojoldu.book.springboot.domain.auction.Auction;
 import com.jojoldu.book.springboot.domain.auction.AuctionRepository;
-import com.jojoldu.book.springboot.domain.posts.Posts;
-import com.jojoldu.book.springboot.domain.shop.Shop;
-import com.jojoldu.book.springboot.domain.shop.ShopRepository;
 import com.jojoldu.book.springboot.domain.user.User;
 import com.jojoldu.book.springboot.domain.user.UserRepository;
 import com.jojoldu.book.springboot.domain.user.UserRepository2;
@@ -14,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,7 +46,7 @@ public class UserService {
     }
 
     @Transactional
-    public String post_item(String email, UserAuctionRequestDto requestDto) {
+    public String post_item(String email, UserAuctionPostItemRequestDto requestDto) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
         user.select_item(requestDto.getItem_name());
         return email;

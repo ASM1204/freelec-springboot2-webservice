@@ -2,7 +2,6 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.domain.auction.Auction;
 import com.jojoldu.book.springboot.domain.auction.AuctionRepository;
 import com.jojoldu.book.springboot.domain.user.User;
 import com.jojoldu.book.springboot.service.posts.AuctionService;
@@ -30,7 +29,7 @@ public class AuctionApiController {
     }//save 등록 insert~~
 
     @PutMapping("/api/v1/auction")
-    public String post_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
+    public String post_item(@LoginUser SessionUser user, @RequestBody UserAuctionPostItemRequestDto requestDto) {
         return userService.post_item(user.getEmail(), requestDto);
     }//아이템 판매등록을 하여 해당 아이템 개수 수정
 
