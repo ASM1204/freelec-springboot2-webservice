@@ -39,7 +39,7 @@ public class AuctionApiController {
     public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
         return userService.buy(user.getEmail(), requestDto);
     }
-    @PutMapping("/api/v1/auction/buy/{auction_id}")
+    @PutMapping("/api/v1/auction/buy/{id}")
     public String sell(@PathVariable Long auction_id, @RequestBody UserAuctionSellRequestDto requestDto) {
         Auction auction = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
         String email = auction.getAuthor();
