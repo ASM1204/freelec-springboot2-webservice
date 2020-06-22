@@ -84,16 +84,16 @@ public class IndexController {
         return "shop-buy";
     }
 
-    @GetMapping("/auction/buy/{auction_id}")
-    public String auctionBuy(@PathVariable Long auction_id, Model model, @LoginUser SessionUser user) {
-
-        AuctionListResponseDto dto = auctionService.findById(auction_id);
-        model.addAttribute("my_email", user.getEmail());
-        model.addAttribute("buy", dto);
-        model.addAttribute("all_user",userService.findMy(user.getEmail()));
-
-        return "auction-buy";
-    }
+//    @GetMapping("/auction/buy/{auction_id}")
+//    public String auctionBuy(@PathVariable Long auction_id, Model model, @LoginUser SessionUser user) {
+//
+//        AuctionListResponseDto dto = auctionService.findById(auction_id);
+//        model.addAttribute("my_email", user.getEmail());
+//        model.addAttribute("buy", dto);
+//        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+//
+//        return "auction-buy";
+//    }
 
 
 }
