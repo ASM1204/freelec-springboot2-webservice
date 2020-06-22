@@ -33,10 +33,11 @@ public class AuctionApiController {
     public String trade(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
         return userService.buy(user.getEmail(), requestDto);
     }
-    @PutMapping("/api/v1/auction/buy/{id}")
-    public String sell(@RequestBody UserAuctionSoldRequestDto requestDto) {
-        return userService.sell(requestDto.getAuthor(),requestDto);
+    @PutMapping("/api/v1/auction/buy/{auction_id}")
+    public Long sell(@PathVariable Long auction_id, @RequestBody UserAuctionSoldRequestDto requestDto) {
+        return userService.sell(auction_id,requestDto);
     }//경매장에서 아이템 구매를 하였을때
+
 //    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
 //    public Long delete(@PathVariable Long auction_id) {
 //        auctionService.delete(auction_id);

@@ -3,6 +3,8 @@ package com.jojoldu.book.springboot.service.posts;
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
+import com.jojoldu.book.springboot.domain.auction.Auction;
+import com.jojoldu.book.springboot.domain.auction.AuctionRepository;
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.shop.Shop;
 import com.jojoldu.book.springboot.domain.shop.ShopRepository;
@@ -23,6 +25,7 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository2 userRepository2;
     private final UserRepository userRepository;
+    private final AuctionRepository auctionRepository;
 
     @Transactional
     public String buy(String email, UserRequestDto requestDto) {
@@ -32,10 +35,11 @@ public class UserService {
     }
 
     @Transactional
-    public String sell(String email, UserAuctionSoldRequestDto requestDto) {
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
+    public Long sell(Long auction_id, UserAuctionSoldRequestDto requestDto) {
+        Auction auction = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
+        User user = userRepository.findByEmail(auction.getAuthor()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = "));
         user.item_sell(requestDto.getItem_berry());
-        return email;
+        return auction_id;
     }
 
     public UserResponseDto findById(Long user_id) {
