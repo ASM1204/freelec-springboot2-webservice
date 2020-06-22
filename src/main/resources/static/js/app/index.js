@@ -146,13 +146,13 @@ var main = {
     },
     trade : function () {
 
-            var item_price = $('#item_berry').val();
-            var berry = $('#my_berry').val();
+            var item_price = $('#auction_item_price').val();
+            var berry = $('#auction_my_berry').val();
 
             if(item_price <= berry){
                 var data = {
-                    item_name: $('#item_name').val(),
-                    item_berry: $('#item_berry').val()
+                    item_name: $('#auction_item_name').val(),
+                    item_berry: $('#auction_item_price').val()
                 };
 
                 var id = $('#item_id').val();
@@ -172,8 +172,8 @@ var main = {
                 });
 
                 var data_ = {
-                    email: $('#author').val(),
-                    item_berry: $('#item_berry').val()
+                    email: $('#auction_author').val(),
+                    item_berry: $('#auction_item_berry').val()
                 };
                 $.ajax({
                     type: 'PUT',

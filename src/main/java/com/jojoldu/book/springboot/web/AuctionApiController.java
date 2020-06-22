@@ -33,10 +33,10 @@ public class AuctionApiController {
     public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
         return userService.buy(user.getEmail(), requestDto);
     }
-//    @PutMapping("/api/v1/auction/buy/{auction_id}")
-//    public String sell(String email, @RequestBody UserRequestDto requestDto) {
-//        return userService.sell(email, requestDto);
-//    }
+    @PutMapping("/api/v1/auction/buy/{id}")
+    public String sell(String email, @RequestBody UserRequestDto requestDto) {
+        return userService.sell(email, requestDto);
+    }
 //    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
 //    public Long delete(@PathVariable Long auction_id) {
 //        auctionService.delete(auction_id);
