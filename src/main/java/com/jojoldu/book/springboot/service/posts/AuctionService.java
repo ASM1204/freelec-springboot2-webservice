@@ -38,6 +38,14 @@ public class AuctionService {
         return new AuctionListResponseDto(entity);
     }
 
+    @Transactional
+    public void delete (Long auction_id) {
+        Auction auction = auctionRepository.findById(auction_id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + auction_id));
+        auctionRepository.delete(auction);
+    }
+
+
     @Transactional(readOnly = true)
     public List<AuctionListResponseDto> findAllAuction() {
         return auctionRepository.findAllAuction().stream()

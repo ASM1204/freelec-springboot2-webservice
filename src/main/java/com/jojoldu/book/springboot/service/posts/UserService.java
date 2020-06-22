@@ -29,6 +29,13 @@ public class UserService {
         return email;
     }
 
+    @Transactional
+    public String sell(String email, UserRequestDto requestDto) {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
+        user.item_sell(requestDto.getItem_berry());
+        return email;
+    }
+
     public UserResponseDto findById(Long user_id) {
         User entity = userRepository2.findById(user_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user_id));
         return new UserResponseDto(entity);
@@ -40,9 +47,9 @@ public class UserService {
     }
 
     @Transactional
-    public String sell_item(String email, UserAuctionRequestDto requestDto) {
+    public String sell_item(String email, UserAuctionSellRequestDto requestDto) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        user.select_item(requestDto.getItem_name());
+        user.item_sell(requestDto.getItem_price());
         return email;
     }
 
