@@ -171,23 +171,23 @@ var main = {
                     window.location.href = '/#auction';
                 });
 
-                var data_ = {
-                    email: $('#auction_author').val(),
-                    item_berry: $('#auction_item_berry').val()
-                };
-                $.ajax({
-                    type: 'PUT',
-                    url: '/api/v1/auction/'+id,
-                    dataType: 'json',
-                    contentType:'application/json; charset=utf-8',
-                    data: JSON.stringify(data)
-                }).done(function() {
-                    alert('아이템을 구매하였습니다.');
-                    window.location.href = '/#auction';
-                }).fail(function (error) {
-                    alert('아이템을 구매하였습니다.');
-                    window.location.href = '/#auction';
-                });
+//                var data_ = {
+//                    email: $('#auction_author').val(),
+//                    item_berry: $('#auction_item_berry').val()
+//                };
+//                $.ajax({
+//                    type: 'PUT',
+//                    url: '/api/v1/auction/'+id,
+//                    dataType: 'json',
+//                    contentType:'application/json; charset=utf-8',
+//                    data: JSON.stringify(data)
+//                }).done(function() {
+//                    alert('아이템을 구매하였습니다.');
+//                    window.location.href = '/#auction';
+//                }).fail(function (error) {
+//                    alert('아이템을 구매하였습니다.');
+//                    window.location.href = '/#auction';
+//                });
             }else{
                 alert('소지한 Berry가 부족합니다.');
             }

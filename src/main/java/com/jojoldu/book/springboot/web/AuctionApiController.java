@@ -36,7 +36,7 @@ public class AuctionApiController {
     @PutMapping("/api/v1/auction/buy/{id}")
     public String sell(String email, @RequestBody UserRequestDto requestDto) {
         return userService.sell(email, requestDto);
-    }
+    }//경매장에서 아이템 구매를 하였을때
 //    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
 //    public Long delete(@PathVariable Long auction_id) {
 //        auctionService.delete(auction_id);
