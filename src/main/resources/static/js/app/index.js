@@ -173,7 +173,7 @@ var main = {
                 });
 
                 var data_ = {
-                    email: $('#auction_author').val(),
+                    author: $('#auction_author').val(),
                     item_berry: $('#auction_item_berry').val()
                 };
                 $.ajax({
