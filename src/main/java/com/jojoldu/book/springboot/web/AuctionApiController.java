@@ -37,11 +37,11 @@ public class AuctionApiController {
     public String sell(String email, @RequestBody UserRequestDto requestDto) {
         return userService.sell(email, requestDto);
     }
-    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
-    public Long delete(@PathVariable Long auction_id) {
-        auctionService.delete(auction_id);
-        return auction_id;
-    }
+//    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
+//    public Long delete(@PathVariable Long auction_id) {
+//        auctionService.delete(auction_id);
+//        return auction_id;
+//    }
 
     @GetMapping("/api/v1/auction/list")
     public List<AuctionListResponseDto> findAllAuction() {
