@@ -2,10 +2,6 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.domain.auction.Auction;
-import com.jojoldu.book.springboot.domain.auction.AuctionRepository;
-import com.jojoldu.book.springboot.domain.shop.Shop;
-import com.jojoldu.book.springboot.domain.user.User;
 import com.jojoldu.book.springboot.service.posts.AuctionService;
 import com.jojoldu.book.springboot.service.posts.ShopService;
 import com.jojoldu.book.springboot.service.posts.UserService;
@@ -22,8 +18,6 @@ public class AuctionApiController {
     private final ShopService shopService;
     private final UserService userService;
     private final AuctionService auctionService;
-    private final User user;
-    private final AuctionRepository auctionRepository;
 
     @PostMapping("/api/v1/auction")
     public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
@@ -31,19 +25,17 @@ public class AuctionApiController {
     }//save 등록 insert~~
 
     @PutMapping("/api/v1/auction")
-    public String post_item(@LoginUser SessionUser user, @RequestBody UserAuctionPostItemRequestDto requestDto) {
-        return userService.item_post(user.getEmail(), requestDto);
-    }//아이템 판매등록을 하여 해당 아이템 개수 수정
+    public String sell_item(String email, @RequestBody UserAuctionSellRequestDto requestDto) {
+        return userService.sell_item(email, requestDto);
+    }//값 수정
 
     @PutMapping("/api/v1/auction/buy/{auction_id}")
     public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
         return userService.buy(user.getEmail(), requestDto);
     }
     @PutMapping("/api/v1/auction/buy/{id}")
-    public String sell(@PathVariable Long auction_id, @RequestBody UserAuctionSellRequestDto requestDto) {
-        Auction auction = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
-        String email = auction.getAuthor();
-        return userService.sell_get_berry(email, requestDto);
+    public String sell(String email, @RequestBody UserRequestDto requestDto) {
+        return userService.sell(email, requestDto);
     }
 //    @DeleteMapping("/api/v1/auction/buy/{auction_id}")
 //    public Long delete(@PathVariable Long auction_id) {

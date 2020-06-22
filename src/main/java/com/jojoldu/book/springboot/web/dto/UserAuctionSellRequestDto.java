@@ -7,12 +7,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class UserAuctionSellRequestDto {
-    private String email;
-    private int item_berry;
+    private int item_price;
 
     @Builder
-    public UserAuctionSellRequestDto(String email, int item_berry) {
-        this.email = email;
-        this.item_berry = item_berry;
+    public UserAuctionSellRequestDto(int item_price) {
+        this.item_price = item_price;
     }
 }

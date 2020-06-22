@@ -133,12 +133,10 @@ public class User extends BaseTimeEntity {
                 break;
         }
     }
-
-    public void item_sell_get_berry(int item_berry) {
+    public void item_sell(int item_berry) {
         berry += item_berry;
     }
-
-    public void item_post(String item_name) {
+    public void select_item(String item_name) {
         switch (item_name) {
             case "smoke_bomb":
                 smoke_bomb--;
