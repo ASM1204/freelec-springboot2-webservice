@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 public class ShopListResponseDto {
+
     private Long item_id;
     private String item_name;
     private String item_image;

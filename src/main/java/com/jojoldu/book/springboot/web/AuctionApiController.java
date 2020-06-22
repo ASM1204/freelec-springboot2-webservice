@@ -27,12 +27,12 @@ public class AuctionApiController {
     @PutMapping("/api/v1/auction")
     public String sell_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
         return userService.sell_item(user.getEmail(), requestDto);
-    }
+    }//값 수정
 
-    @PutMapping("/api/v1/auction/{auction_id}")
-    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
-        return userService.buy(user.getEmail(), requestDto);
-    }
+//    @PutMapping("/api/v1/auction/buy/{auction_id}")
+//    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
+//        return userService.buy(user.getEmail(), requestDto);
+//    }
 
     @GetMapping("/api/v1/auction/list")
     public List<AuctionListResponseDto> findAllAuction() {

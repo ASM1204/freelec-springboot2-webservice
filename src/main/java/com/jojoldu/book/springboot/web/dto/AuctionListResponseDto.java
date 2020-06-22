@@ -14,7 +14,6 @@ public class AuctionListResponseDto {
     private String item_type;
     private int item_price;
     private String author;
-    private LocalDateTime createdDate;
 
     public AuctionListResponseDto(Auction entity) {
         this.auction_id = entity.getAuction_id();
@@ -23,6 +22,5 @@ public class AuctionListResponseDto {
         this.item_type = entity.getItem_type();
         this.item_price = entity.getItem_price();
         this.author = entity.getAuthor();
-        this.createdDate = entity.getCreatedDate();
     }
 }

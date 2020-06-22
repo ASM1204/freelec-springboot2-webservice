@@ -15,7 +15,6 @@ public class ShopBuyResponseDto {
     private String item_image;
     private String item_type;
     private int item_price;
-    private String user_email;
 
     public ShopBuyResponseDto(Shop entity){
         this.item_id = entity.getItem_id();
