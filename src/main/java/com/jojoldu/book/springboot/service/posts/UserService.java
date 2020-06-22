@@ -27,13 +27,13 @@ public class UserService {
         return email;
     }
 
-    @Transactional
-    public String sell(Long auction_id, UserAuctionSellRequestDto requestDto) {
-        Auction auction = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
-        User user = userRepository.findByEmail(auction.getAuthor()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction.getAuthor()));
-        user.item_sell(requestDto.getItem_price());
-        return auction.getAuthor();
-    }
+//    @Transactional
+//    public String sell(Long auction_id, UserAuctionSellRequestDto requestDto) {
+//        Auction auction = auctionRepository.findById(auction_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction_id));
+//        User user = userRepository.findByEmail(auction.getAuthor()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + auction.getAuthor()));
+//        user.item_sell(requestDto.getItem_price());
+//        return auction.getAuthor();
+//    }
 
     public UserResponseDto findById(Long user_id) {
         User entity = userRepository2.findById(user_id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + user_id));
