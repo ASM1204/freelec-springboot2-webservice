@@ -156,7 +156,7 @@ var main = {
                     item_berry: $('#auction_item_price').val()
                 };
 
-                var id = $('#item_id').val();
+                var id = $('#auction_item_id').val();
 
                 $.ajax({
                     type: 'PUT',
