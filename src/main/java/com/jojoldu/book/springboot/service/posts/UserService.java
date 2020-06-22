@@ -47,9 +47,9 @@ public class UserService {
     }
 
     @Transactional
-    public String sell_item(String email, UserAuctionSellRequestDto requestDto) {
+    public String sell_item(String email, UserAuctionPostItemRequestDto requestDto) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + email));
-        user.item_sell(requestDto.getItem_price());
+        user.select_item(requestDto.getItem_name());
         return email;
     }
 

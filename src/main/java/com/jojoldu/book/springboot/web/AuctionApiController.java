@@ -25,7 +25,7 @@ public class AuctionApiController {
     }//save 등록 insert~~
 
     @PutMapping("/api/v1/auction")
-    public String sell_item(String email, @RequestBody UserAuctionSellRequestDto requestDto) {
+    public String sell_item(String email, @RequestBody UserAuctionPostItemRequestDto requestDto) {
         return userService.sell_item(email, requestDto);
     }//값 수정
 
