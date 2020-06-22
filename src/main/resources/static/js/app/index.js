@@ -150,6 +150,7 @@ var main = {
             var berry = $('#auction_my_berry').val();
 
             if(item_price <= berry){
+
                 var data = {
                     item_name: $('#auction_item_name').val(),
                     item_berry: $('#auction_item_price').val()
@@ -164,10 +165,10 @@ var main = {
                     contentType:'application/json; charset=utf-8',
                     data: JSON.stringify(data)
                 }).done(function() {
-                    alert('아이템을 구매하였습니다.');
+                    alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
                     window.location.href = '/#auction';
                 }).fail(function (error) {
-                    alert('아이템을 구매하였습니다.');
+                    alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
                     window.location.href = '/#auction';
                 });
 
