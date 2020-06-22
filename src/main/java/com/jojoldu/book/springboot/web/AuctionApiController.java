@@ -29,7 +29,7 @@ public class AuctionApiController {
         return userService.sell_item(user.getEmail(), requestDto);
     }//아이템 판매등록해서 개수 수정
 
-    @PutMapping("/api/v1/auction/buy/{auction_id}")
+    @PutMapping("/api/v1/auction/{auction_id}")
     public String trade(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
         return userService.buy(user.getEmail(), requestDto);
     }
