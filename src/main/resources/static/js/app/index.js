@@ -190,7 +190,7 @@ var main = {
                     window.location.href = '/#auction';
                 });
             }else{
-                alert('소지한 Berry가 부족합니다.');
+                alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val(););
             }
         },
     delete : function () {
