@@ -24,15 +24,15 @@ public class AuctionApiController {
     private final User user;
     private final AuctionRepository auctionRepository;
 
-//    @PostMapping("/api/v1/auction")
-//    public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
-//        return auctionService.auction_save(requestDto);
-//    }//save 등록 insert~~
+    @PostMapping("/api/v1/auction")
+    public Long save(@RequestBody AuctionSaveRequestDto requestDto) {
+        return auctionService.auction_save(requestDto);
+    }//save 등록 insert~~
 
-//    @PutMapping("/api/v1/auction")
-//    public String post_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
-//        return userService.post_item(user.getEmail(), requestDto);
-//    }//아이템 판매등록을 하여 해당 아이템 개수 수정
+    @PutMapping("/api/v1/auction")
+    public String post_item(@LoginUser SessionUser user, @RequestBody UserAuctionRequestDto requestDto) {
+        return userService.post_item(user.getEmail(), requestDto);
+    }//아이템 판매등록을 하여 해당 아이템 개수 수정
 
 //    @PutMapping("/api/v1/auction/buy/{auction_id}")
 //    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
