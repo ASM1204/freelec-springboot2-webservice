@@ -95,7 +95,7 @@ public class IndexController {
         model.addAttribute("buy", dto);
         model.addAttribute("all_user",userService.findMy(user.getEmail()));
 
-        return "shop-buy";
+        return "auction-buy";
     }
 
 

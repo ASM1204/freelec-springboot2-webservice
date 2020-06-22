@@ -29,6 +29,11 @@ public class AuctionApiController {
         return userService.sell_item(user.getEmail(), requestDto);
     }
 
+    @PutMapping("/api/v1/auction/{auction_id}")
+    public String buy(@LoginUser SessionUser user, @RequestBody UserRequestDto requestDto) {
+        return userService.buy(user.getEmail(), requestDto);
+    }
+
     @GetMapping("/api/v1/auction/list")
     public List<AuctionListResponseDto> findAllAuction() {
         return auctionService.findAllAuction();
