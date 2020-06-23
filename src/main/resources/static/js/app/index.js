@@ -190,6 +190,19 @@ var main = {
                     }).fail(function (error) {
                         window.location.href = '/#auction';
                     });
+
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/api/v1/posts/'+id,
+                        dataType: 'json',
+                        contentType:'application/json; charset=utf-8'
+                    }).done(function() {
+                        alert('글이 삭제되었습니다.');
+                        window.location.href = '/';
+                    }).fail(function (error) {
+                        alert(JSON.stringify(error));
+                    });
+
             }else{
                 alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val());
             }
