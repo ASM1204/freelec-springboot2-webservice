@@ -64,17 +64,17 @@ public class IndexController {
 
 
     @GetMapping("/posts/save")
-    public String postsSave(Model model, @LoginUser SessionUser user)
+    public String postsSave()
     {
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
+
         return "posts-save";
     }
 
     @GetMapping("/notice/save")
-    public String noticeSave(){
-
+    public String noticeSave(Model model, @LoginUser SessionUser user){
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "notice-save";
     }
 
