@@ -1,3 +1,5 @@
+var managers = new Array('sangminan1204@gmail.com');
+
 var main = {
     init : function () {
         var _this = this;
@@ -59,7 +61,7 @@ var main = {
     },
     notice_save : function () {
 
-        var managers = new Array('sangminan1204@gmail.com');
+//        var managers = new Array('sangminan1204@gmail.com');
         var check_email = $('#check_email').val();
 
         for(var i = 0; i < managers.length; i++){
@@ -111,7 +113,7 @@ var main = {
     },
     notice_update : function () {
 
-        var managers = new Array('sangminan1204@gmail.com');
+//        var managers = new Array('sangminan1204@gmail.com');
         var check_email = $('#check_email').val();
 
         for(var i = 0; i < managers.length; i++){
