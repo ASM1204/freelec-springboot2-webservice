@@ -91,25 +91,35 @@ var main = {
         }
     },
     update : function () {
-        var data = {
-            title: $('#title').val(),
-            content: $('#content').val()
-        };
 
-        var id = $('#id').val();
+        var check_my_name = $('#check_my_name').val();
+        var check_author = $('#author').val();
 
-        $.ajax({
-            type: 'PUT',
-            url: '/api/v1/posts/'+id,
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('글이 수정되었습니다.');
+        if(check_my_name == check_author){
+
+            var data = {
+                title: $('#title').val(),
+                content: $('#content').val()
+            };
+
+            var id = $('#id').val();
+
+            $.ajax({
+                type: 'PUT',
+                url: '/api/v1/posts/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('글이 수정되었습니다.');
+                window.location.href = '/#board';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        }else{
+            alert('권한이 없습니다.');
             window.location.href = '/#board';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+        }
     },
     notice_update : function () {
 
