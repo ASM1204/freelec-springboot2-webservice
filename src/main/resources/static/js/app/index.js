@@ -284,19 +284,29 @@ var main = {
             }
         },
     delete : function () {
+
+        var check_my_name = $('#check_my_name').val();
+        var check_author = $('#author').val();
+
+        if(check_my_name == check_author){
+
         var id = $('#id').val();
 
-        $.ajax({
-            type: 'DELETE',
-            url: '/api/v1/posts/'+id,
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8'
-        }).done(function() {
-            alert('글이 삭제되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+            $.ajax({
+                type: 'DELETE',
+                url: '/api/v1/posts/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8'
+            }).done(function() {
+                alert('글이 삭제되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        }else{
+            alert('권한이 없습니다.');
+        }
+
     },
 
     notice_delete : function () {
