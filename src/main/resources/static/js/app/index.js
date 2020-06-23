@@ -61,7 +61,6 @@ var main = {
     },
     notice_save : function () {
 
-//        var managers = new Array('sangminan1204@gmail.com');
         var check_email = $('#check_email').val();
 
         for(var i = 0; i < managers.length; i++){
@@ -113,7 +112,6 @@ var main = {
     },
     notice_update : function () {
 
-//        var managers = new Array('sangminan1204@gmail.com');
         var check_email = $('#check_email').val();
 
         for(var i = 0; i < managers.length; i++){
@@ -270,11 +268,6 @@ var main = {
                         url: '/api/v1/auction/'+id,
                         dataType: 'json',
                         contentType:'application/json; charset=utf-8'
-                    }).done(function() {
-                        alert('글이 삭제되었습니다.');
-                        window.location.href = '/';
-                    }).fail(function (error) {
-                        alert(JSON.stringify(error));
                     });
             }else{
                 alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val());
@@ -297,19 +290,28 @@ var main = {
     },
 
     notice_delete : function () {
-        var id = $('#notice_id').val();
 
-        $.ajax({
-            type: 'DELETE',
-            url: '/api/v1/notice/'+id,
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8'
-        }).done(function() {
-            alert('공지사항이 삭제되었습니다.');
-            window.location.href = '/#notice';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+        var check_email = $('#check_email').val();
+
+        for(var i = 0; i < managers.length; i++){
+            if(check_email == managers[i]){
+
+                var id = $('#notice_id').val();
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/api/v1/notice/'+id,
+                    dataType: 'json',
+                    contentType:'application/json; charset=utf-8'
+                }).done(function() {
+                    alert('공지사항이 삭제되었습니다.');
+                    window.location.href = '/#notice';
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            }
+        }
+
     }
 
 };
