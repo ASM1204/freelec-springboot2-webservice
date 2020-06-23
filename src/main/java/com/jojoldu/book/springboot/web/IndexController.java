@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
+    private final NoticeService noticeService;
     private final RankService rankService;
     private final ShopService shopService;
     private final UserService userService;
@@ -28,6 +29,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("notice", noticeService.findAllDesc());
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
@@ -65,12 +67,25 @@ public class IndexController {
         return "posts-save";
     }
 
+    @GetMapping("/notice/save")
+    public String noticeSave(){
+        return "notice-save";
+    }
+
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
 
         return "posts-update";
+    }
+
+    @GetMapping("/notice/update/{notice_id}")
+    public String noticeUpdate(@PathVariable Long notice_id, Model model) {
+        NoticeResponseDto dto = noticeService.findById(notice_id);
+        model.addAttribute("notice", dto);
+
+        return "notice-update";
     }
 
     @GetMapping("/shop/buy/{item_id}")
