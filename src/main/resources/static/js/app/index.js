@@ -142,8 +142,8 @@ var main = {
     },
     buy : function () {
 
-        var item_price = $('#item_berry').val();
         var my_berry = $('#item_price').val();
+        var item_price = $('#item_berry').val();
 
         if(item_price <= my_berry){
 
@@ -168,9 +168,8 @@ var main = {
                 window.location.href = '/#shop';
             });
         }else{
-            alert('소지한 Berry가 부족합니다.');
+            alert('소지한 Berry가 부족합니다.@내 베리 : '+my_berry+'@아이템 베리 : '+item_price);
         }
-
 
     },
     select : function () {
