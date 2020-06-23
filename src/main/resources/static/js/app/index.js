@@ -151,7 +151,7 @@ var main = {
             var name = $('#auction_my_name').val();
             var seller = $('#auction_author').val();
 
-            if(name != seller){
+            if(name == seller){
                     alert('판매자와 구매자가 동일합니다.@ 판매자 '+ seller +'@ 구매자 '+ name);
                 }else if(item_price <= berry){
                     var data = {
