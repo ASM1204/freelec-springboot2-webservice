@@ -86,6 +86,7 @@ var main = {
                 });
             }else{
                 alert('권한이 없습니다.');
+                window.location.href = '/#notice';
             }
         }
     },
@@ -137,6 +138,7 @@ var main = {
                 });
             }else{
                 alert('권한이 없습니다.');
+                window.location.href = '/#notice';
             }
         }
     },
@@ -169,6 +171,7 @@ var main = {
             });
         }else{
             alert('소지한 Berry가 부족합니다.@내 베리 : '+my_berry+'@아이템 베리 : '+item_price);
+            window.location.href = '/#shop';
         }
 
     },
@@ -281,6 +284,7 @@ var main = {
                     });
             }else{
                 alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val());
+                window.location.href = '/#auction';
             }
         },
     delete : function () {
@@ -299,12 +303,13 @@ var main = {
                 contentType:'application/json; charset=utf-8'
             }).done(function() {
                 alert('글이 삭제되었습니다.');
-                window.location.href = '/';
+                window.location.href = '/#board';
             }).fail(function (error) {
                 alert(JSON.stringify(error));
             });
         }else{
             alert('권한이 없습니다.');
+            window.location.href = '/#board';
         }
 
     },
@@ -329,6 +334,9 @@ var main = {
                 }).fail(function (error) {
                     alert(JSON.stringify(error));
                 });
+            }else{
+                alert('권한이 없습니다.');
+                window.location.href = '/#notice';
             }
         }
 
