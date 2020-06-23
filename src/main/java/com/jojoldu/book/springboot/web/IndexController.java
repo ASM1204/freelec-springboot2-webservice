@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpSession;
 
@@ -63,12 +64,17 @@ public class IndexController {
 
 
     @GetMapping("/posts/save")
-    public String postsSave(){
+    public String postsSave(Model model, @LoginUser SessionUser user)
+    {
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "posts-save";
     }
 
     @GetMapping("/notice/save")
     public String noticeSave(){
+
         return "notice-save";
     }
 
