@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
@@ -25,8 +26,6 @@ public class IndexController {
     private final HttpSession httpSession;
 
 
-
-
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
@@ -36,44 +35,44 @@ public class IndexController {
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
-        model.addAttribute("auction",auctionService.findAllAuction());
+        model.addAttribute("auction", auctionService.findAllAuction());
 
         return "index";
     }
 
     @GetMapping("/user")
-    public String userMy( Model model, @LoginUser SessionUser user) {
-        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+    public String userMy(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("all_user", userService.findMy(user.getEmail()));
         return "user";
     }
 
     @GetMapping("/auction/select")
-    public String auction_select( Model model, @LoginUser SessionUser user) {
-        model.addAttribute("item_list",shopService.findShop());
-        model.addAttribute("my",userService.findMy(user.getEmail()));
+    public String auction_select(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("item_list", shopService.findShop());
+        model.addAttribute("my", userService.findMy(user.getEmail()));
         return "auction-select";
     }
 
     @GetMapping("/user/my/{user_id}")
     public String userMy(@PathVariable Long user_id, Model model) {
         UserResponseDto dto = userService.findById(user_id);
-        model.addAttribute("user_my",userService.findById(user_id));
+        model.addAttribute("user_my", userService.findById(user_id));
 
         return "user-my";
     }
 
 
     @GetMapping("/posts/save")
-    public String postsSave()
-    {
+    public String postsSave() {
 
         return "posts-save";
     }
 
     @GetMapping("/notice/save")
-    public String noticeSave(Model model, @LoginUser SessionUser user){
+    public String noticeSave(Model model, @LoginUser SessionUser user) {
         if (user != null) {
             model.addAttribute("userName", user.getName());
+            model.addAttribute("email", user.getEmail());
         }
         return "notice-save";
     }
@@ -87,9 +86,10 @@ public class IndexController {
     }
 
     @GetMapping("/notice/update/{notice_id}")
-    public String noticeUpdate(@PathVariable Long notice_id, Model model) {
+    public String noticeUpdate(@PathVariable Long notice_id, Model model, @LoginUser SessionUser user) {
         NoticeResponseDto dto = noticeService.findById(notice_id);
         model.addAttribute("notice", dto);
+        model.addAttribute("email", user.getEmail());
 
         return "notice-update";
     }
@@ -100,7 +100,7 @@ public class IndexController {
         ShopBuyResponseDto dto = shopService.findById(item_id);
         model.addAttribute("my_email", user.getEmail());
         model.addAttribute("buy", dto);
-        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+        model.addAttribute("all_user", userService.findMy(user.getEmail()));
 
         return "shop-buy";
     }
@@ -111,7 +111,7 @@ public class IndexController {
         AuctionListResponseDto dto = auctionService.findById(auction_id);
         model.addAttribute("my_email", user.getEmail());
         model.addAttribute("buy", dto);
-        model.addAttribute("all_user",userService.findMy(user.getEmail()));
+        model.addAttribute("all_user", userService.findMy(user.getEmail()));
 
         return "auction-buy";
     }

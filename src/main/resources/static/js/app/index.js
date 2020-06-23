@@ -58,24 +58,35 @@ var main = {
         });
     },
     notice_save : function () {
-        var data = {
-            title: $('#notice_title').val(),
-            author: $('#notice_author').val(),
-            content: $('#notice_content').val()
-        };
 
-        $.ajax({
-            type: 'POST',
-            url: '/api/v1/notice',
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            window.location.reload(true);
-            window.location.href = '/#notice';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+        var managers = new Array('sangminan1204@gmail.com');
+        var check_email = $('#check_email').val();
+
+        for(var i = 0; i < managers.length; i++){
+            if(check_email == managers[i]){
+
+                var data = {
+                    title: $('#notice_title').val(),
+                    author: $('#notice_author').val(),
+                    content: $('#notice_content').val()
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/v1/notice',
+                    dataType: 'json',
+                    contentType:'application/json; charset=utf-8',
+                    data: JSON.stringify(data)
+                }).done(function() {
+                    window.location.reload(true);
+                    window.location.href = '/#notice';
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            }else{
+                alert('권한이 없습니다.');
+            }
+        }
     },
     update : function () {
         var data = {
@@ -99,25 +110,35 @@ var main = {
         });
     },
     notice_update : function () {
-        var data = {
-            title: $('#notice_title').val(),
-            content: $('#notice_content').val()
-        };
 
-        var id = $('#notice_id').val();
+        var managers = new Array('sangminan1204@gmail.com');
+        var check_email = $('#check_email').val();
 
-        $.ajax({
-            type: 'PUT',
-            url: '/api/v1/notice/'+id,
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('공지사항이 수정되었습니다.');
-            window.location.href = '/#notice';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+        for(var i = 0; i < managers.length; i++){
+            if(check_email == managers[i]){
+                var data = {
+                    title: $('#notice_title').val(),
+                    content: $('#notice_content').val()
+                };
+
+                var id = $('#notice_id').val();
+
+                $.ajax({
+                    type: 'PUT',
+                    url: '/api/v1/notice/'+id,
+                    dataType: 'json',
+                    contentType:'application/json; charset=utf-8',
+                    data: JSON.stringify(data)
+                }).done(function() {
+                    alert('공지사항이 수정되었습니다.');
+                    window.location.href = '/#notice';
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            }else{
+                alert('권한이 없습니다.');
+            }
+        }
     },
     buy : function () {
         var data = {
