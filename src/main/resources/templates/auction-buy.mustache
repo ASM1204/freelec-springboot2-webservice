@@ -32,6 +32,10 @@
                 <label for="auction_author"> 판매자 </label>
                 <input type="text" class="form-control" id="auction_author" value="{{buy.author}}" readonly>
             </div>
+            <div class="form-group">
+                <label for="auction_my_name"> 구매자 </label>
+                <input type="text" class="form-control" id="auction_my_name" value="{{all_user.name}}" readonly>
+            </div>
         </form>
         <button type="button" class="btn btn-primary" id="btn-trade">구매</button>
         <a href="/#auction" role="button" class="btn btn-secondary">취소</a>

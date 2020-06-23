@@ -148,47 +148,48 @@ var main = {
 
             var item_price = $('#auction_item_price').val();
             var berry = $('#auction_my_berry').val();
+            var name = $('#auction_my_name').val();
+            var seller = $('#auction_author').val();
 
-            if(item_price <= berry){
+            if(name != seller){
+                    alert('판매자와 구매자가 동일합니다.@ 판매자 '+ seller +'@ 구매자 '+ name);
+                }else if(item_price <= berry){
+                    var data = {
+                        item_name: $('#auction_item_name').val(),
+                        item_berry: $('#auction_item_price').val()
+                    };
 
-                var data = {
-                    item_name: $('#auction_item_name').val(),
-                    item_berry: $('#auction_item_price').val()
-                };
+                    var id = $('#auction_item_id').val();
 
-                var id = $('#auction_item_id').val();
+                    $.ajax({
+                        type: 'PUT',
+                        url: '/api/v1/auction/'+id,
+                        dataType: 'json',
+                        contentType:'application/json; charset=utf-8',
+                        data: JSON.stringify(data)
+                    }).done(function() {
+                        alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
+                        window.location.href = '/#auction';
+                    }).fail(function (error) {
+                        alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
+                        window.location.href = '/#auction';
+                    });
 
-                $.ajax({
-                    type: 'PUT',
-                    url: '/api/v1/auction/'+id,
-                    dataType: 'json',
-                    contentType:'application/json; charset=utf-8',
-                    data: JSON.stringify(data)
-                }).done(function() {
-                    alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
-                    window.location.href = '/#auction';
-                }).fail(function (error) {
-                    alert('아이템을 구매하였습니다.@'+$('#auction_item_name').val()+'@'+$('#auction_item_price').val()+'@');
-                    window.location.href = '/#auction';
-                });
-
-                var data_ = {
-                    author: $('#auction_author').val(),
-                    item_berry: $('#auction_item_berry').val()
-                };
-                $.ajax({
-                    type: 'PUT',
-                    url: '/api/v1/auction/buy/'+id,
-                    dataType: 'json',
-                    contentType:'application/json; charset=utf-8',
-                    data: JSON.stringify(data)
-                }).done(function() {
-                    alert('아이템을 구매하였습니다.');
-                    window.location.href = '/#auction';
-                }).fail(function (error) {
-                    alert('아이템을 구매하였습니다.');
-                    window.location.href = '/#auction';
-                });
+                    var data_ = {
+                        author: $('#auction_author').val(),
+                        item_berry: $('#auction_item_berry').val()
+                    };
+                    $.ajax({
+                        type: 'PUT',
+                        url: '/api/v1/auction/buy/'+id,
+                        dataType: 'json',
+                        contentType:'application/json; charset=utf-8',
+                        data: JSON.stringify(data)
+                    }).done(function() {
+                        window.location.href = '/#auction';
+                    }).fail(function (error) {
+                        window.location.href = '/#auction';
+                    });
             }else{
                 alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val());
             }
