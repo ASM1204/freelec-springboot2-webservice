@@ -7,6 +7,7 @@ import com.jojoldu.book.springboot.service.posts.UserService;
 import com.jojoldu.book.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -19,9 +20,9 @@ public class UnityApiController {
     private final UserService userService;
 
     @GetMapping("/unity")
-    public String profile(@LoginUser SessionUser user) {
+    public UserResponseDto profile(Model model) {
 
-        String unity_my_user=user.getEmail();
+        UserResponseDto unity_my_user = userService.findMy("sangminan1204@gmail.com");
 
         return unity_my_user;
 //        return profiles.stream()
