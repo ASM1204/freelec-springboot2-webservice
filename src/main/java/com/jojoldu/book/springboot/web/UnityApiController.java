@@ -20,7 +20,7 @@ public class UnityApiController {
     private final UserService userService;
 
     @GetMapping("/unity/{email}")
-    public String unity(@LoginUser SessionUser user) {
-        return user.getEmail();
+    public String unity() {
+        return "sangmin";
     }
 }
