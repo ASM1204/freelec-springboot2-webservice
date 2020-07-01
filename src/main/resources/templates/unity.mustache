@@ -1,0 +1,66 @@
+{{>layout/header}}
+
+<h1>회원정보</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <table class="table table-horizontal table-bordered">
+            {{#all_user}}
+                <tr style="text-align:center;">
+                    <td>{{user_id}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{name}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td id="unity_my_email">{{email}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{role}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{catcher_win}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{catcher_lose}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{runner_win}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{runner_lose}}</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{berry}}berry</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb}} smoke_bomb</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb1}} smoke_bomb1</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb2}} smoke_bomb2</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb3}} smoke_bomb3</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb4}} smoke_bomb4</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb5}} smoke_bomb5</td>
+                </tr>
+                <tr style="text-align:center;">
+                    <td>{{smoke_bomb13}} smoke_bomb6</td>
+                </tr>
+            {{/all_user}}
+
+        </table>
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        <a href="/" role="button" class="btn btn-secondary">뒤로가기</a>
+    </div>
+</div>
+
+
+{{>layout/footer}}
