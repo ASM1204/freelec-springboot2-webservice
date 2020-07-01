@@ -22,6 +22,6 @@ public class UnityApiController {
     @GetMapping("/unity")
     public String unity(Model model) {
             model.addAttribute("all_user", userService.findUser());
-        return "unity";
+        return String.valueOf(model);
     }
 }
