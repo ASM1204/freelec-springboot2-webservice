@@ -117,13 +117,13 @@ public class IndexController {
         return "auction-buy";
     }
 
-    @GetMapping("/unity")
-    public String unity(Model model, @LoginUser SessionUser user) {
-
-        model.addAttribute("all_user", userService.findMy(user.getEmail()));
-
-        return "unity";
-    }
+//    @GetMapping("/unity")
+//    public String unity(Model model, @LoginUser SessionUser user) {
+//
+//        model.addAttribute("all_user", userService.findMy(user.getEmail()));
+//
+//        return "unity";
+//    }
 
 
 }
