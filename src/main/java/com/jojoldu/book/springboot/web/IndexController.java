@@ -118,6 +118,12 @@ public class IndexController {
         return "auction-buy";
     }
 
+    @GetMapping("/unity")
+    public String unity(Model model) {
+        model.addAttribute("all_user", userService.findUser());
+        return "unity";
+    }
+
 //    @GetMapping("/unity/{email}")
 //    public String unity(Model model, @LoginUser SessionUser user) {
 //
