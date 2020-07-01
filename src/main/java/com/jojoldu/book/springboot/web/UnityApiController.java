@@ -19,9 +19,9 @@ public class UnityApiController {
 
     private final UserService userService;
 
-    @GetMapping("/unity/{email}")
-    public String unity(@LoginUser SessionUser user, Model model) {
-            model.addAttribute("all_user", userService.findMy(user.getEmail()));
+    @GetMapping("/unity")
+    public String unity(Model model) {
+            model.addAttribute("all_user", userService.findUser());
         return "unity";
     }
 }
