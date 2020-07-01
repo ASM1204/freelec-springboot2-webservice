@@ -32,6 +32,7 @@ public class IndexController {
         model.addAttribute("notice", noticeService.findAllDesc());
         if (user != null) {
             model.addAttribute("userName", user.getName());
+            model.addAttribute("userEmail", user.getEmail());
         }
         model.addAttribute("rank", rankService.findRank());
         model.addAttribute("shop", shopService.findShop());
@@ -117,10 +118,10 @@ public class IndexController {
         return "auction-buy";
     }
 
-//    @GetMapping("/unity")
+//    @GetMapping("/unity/{email}")
 //    public String unity(Model model, @LoginUser SessionUser user) {
 //
-//        model.addAttribute("all_user", userService.findMy(user.getEmail()));
+//        model.addAttribute("email", userService.findMy(user.getEmail()));
 //
 //        return "unity";
 //    }

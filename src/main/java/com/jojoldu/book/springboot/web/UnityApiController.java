@@ -19,15 +19,9 @@ public class UnityApiController {
 
     private final UserService userService;
 
-    @GetMapping("/unity")
-    public UserResponseDto profile(Model model) {
-
-        UserResponseDto unity_my_user = userService.findMy("sangminan1204@gmail.com");
-
-        return unity_my_user;
-//        return profiles.stream()
-//                .filter(realProfiles::contains)
-//                .findAny()
-//                .orElse(defaultProfile);
+    @GetMapping("/unity/{email}")
+    public String unity(@LoginUser SessionUser user, Model model) {
+               model.addAttribute("email",user.getEmail());
+        return "unity";
     }
 }

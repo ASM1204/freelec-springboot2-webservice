@@ -31,6 +31,10 @@
                         <form>
                             <button type="submit" formaction="/logout">Logout</button>
                         </form>
+                        <form>
+                            <input type="text" class="form-control" id="my_email" value="{{userEmail}}" readonly>
+                            <button type="button" class="btn btn-primary" id="btn-unity">Unity</button>
+                        </form>
                     {{/userName}}
                     {{^userName}}
                         <form>

@@ -38,6 +38,10 @@ var main = {
         $('#btn-trade').on('click', function () {
             _this.trade();
         });
+
+        $('#btn-unity').on('click', function () {
+            _this.unity();
+        });
     },
     save : function () {
         var data = {
@@ -296,6 +300,24 @@ var main = {
                 alert('소지한 Berry가 부족합니다.@ 아이템 가격 '+$('#auction_item_price').val()+'@ 내 베리 '+$('#auction_my_berry').val());
                 window.location.href = '/#auction';
             }
+        },
+    unity : function () {
+
+            var data_ = {
+                email: $('#my_email').val()
+                };
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/unity',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('성공.@');
+            }).fail(function (error) {
+                alert('실패.@');
+            });
         },
     delete : function () {
 
