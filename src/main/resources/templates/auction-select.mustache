@@ -1,50 +1,60 @@
 {{>layout/header}}
 
-<h1>아이템 선택</h1>
 
-<div class="col-md-12">
-    <div class="col-md-4">
+<div id="wrapper">
+    <!-- Nav -->
+    <nav id="nav">
+        <a href="/#me" class="icon fa-home active"><span>Home</span></a>
+        <a href="/#auction" class="icon fa-star"><span>Auction</span></a>
+        <a href="/#shop" class="icon fa-shopping-cart"><span>Shop</span></a>
+        <a href="/#notice" class="icon fa-th-large"><span>Notice</span></a>
+        <a href="/#board" class="icon fa-th-list"><span>Board</span></a>
+        <a href="/#write" class="icon fa-pencil"><span>Write</span></a>
+        <a href="/#rank" class="icon fa-trophy"><span>Rank</span></a>
+        <a href="/#download" class="icon fa-download"><span>Download</span></a>
+    </nav>
+    <div id="main">
+        <article class="panel">
+            <h1>아이템 선택</h1><br>
+            <form action="#" method="post">
+                <div class="col-md-12">
+                    {{#my}}
+                        <tr style="text-align:center;">
+                            <span style="position:absolute; visibility:hidden;"><input type="text" class="btn btn-primary" id="select_my_email" value="{{email}}"readonly></span>
+                            <td>{{name}}님의 아이템 보유현황</td>
+                        </tr>
 
-
-        {{#my}}
-            <tr style="text-align:center;">
-                <span style="position:absolute; visibility:hidden;"><input type="text" class="btn btn-primary" id="select_my_email" value="{{email}}"readonly></span>
-                <td>{{name}}님의 아이템 보유현황</td>
-            </tr>
-
-            <tr style="text-align:center;">
-                <label>faster : {{faster}}개
-                    <input type="radio" class="btn btn-primary" name="item_my_count" value="{{faster}}">
-                </label>
-            </tr>
-            <tr style="text-align:center;">
-                <label>raider: {{raider}}개
-                    <input type="radio" class="btn btn-primary" name="item_my_count" value="{{raider}}">
-                </label>
-            </tr>
-            <tr style="text-align:center;">
-                <label>timestop : {{timestop}}개
-                    <input type="radio" class="btn btn-primary" name="item_my_count" value="{{timestop}}">
-                </label>
-            </tr>
-        {{/my}}
-        <div class="form-group">
-            <label for="sell_price">가격</label>
-            <input type="text" class="form-control" id="sell_price" placeholder="가격을 입력하세요">
-        </div>
-        <button type="button" class="btn btn-primary" id="btn-select">선택</button>
-        <a href="/#auction" role="button" class="btn btn-secondary">취소</a>
-
+                        <tr style="text-align:center;">
+                            <label>faster : {{faster}}개
+                                <input type="radio" class="btn btn-primary" name="item_my_count" value="{{faster}}">
+                            </label>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <label>raider: {{raider}}개
+                                <input type="radio" class="btn btn-primary" name="item_my_count" value="{{raider}}">
+                            </label>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <label>timestop : {{timestop}}개
+                                <input type="radio" class="btn btn-primary" name="item_my_count" value="{{timestop}}">
+                            </label>
+                        </tr>
+                    {{/my}}
+                        <div class="form-group">
+                            <label for="sell_price">가격</label>
+                            <input type="text" class="form-control" id="sell_price" placeholder="가격을 입력하세요">
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btn-select">선택</button>
+                        <a href="/#auction" role="button" class="btn btn-secondary">취소</a>
+                    <div>
+                        {{#item_list}}
+                            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_id_list" value="{{item_id}}"readonly>
+                            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_image_list" value="{{item_image}}"readonly>
+                            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_name_list" value="{{item_name}}"readonly><br>
+                            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_type_list" value="{{item_type}}"readonly><br>
+                        {{/item_list}}
+                    </div>
+            </form>
+        </article>
     </div>
-    <div>
-        {{#item_list}}
-            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_id_list" value="{{item_id}}"readonly>
-            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_image_list" value="{{item_image}}"readonly>
-            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_name_list" value="{{item_name}}"readonly><br>
-            <input type="text" style="position:absolute; visibility:hidden;" class="btn btn-primary" name="item_type_list" value="{{item_type}}"readonly><br>
-        {{/item_list}}
-    </div>
-    </div>
-</div>
-
 {{>layout/footer}}

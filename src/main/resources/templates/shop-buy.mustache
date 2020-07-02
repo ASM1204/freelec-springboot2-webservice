@@ -2,14 +2,14 @@
 <div id="wrapper">
     <!-- Nav -->
     <nav id="nav">
-        <a href="#me" class="icon fa-home active"><span>Home</span></a>
-        <a href="#auction" class="icon fa-star"><span>Auction</span></a>
-        <a href="#shop" class="icon fa-shopping-cart"><span>Shop</span></a>
-        <a href="#notice" class="icon fa-th-large"><span>Notice</span></a>
-        <a href="#board" class="icon fa-th-list"><span>Board</span></a>
-        <a href="#write" class="icon fa-pencil"><span>Write</span></a>
-        <a href="#rank" class="icon fa-trophy"><span>Rank</span></a>
-        <a href="#download" class="icon fa-download"><span>Download</span></a>
+        <a href="/#me" class="icon fa-home active"><span>Home</span></a>
+        <a href="/#auction" class="icon fa-star"><span>Auction</span></a>
+        <a href="/#shop" class="icon fa-shopping-cart"><span>Shop</span></a>
+        <a href="/#notice" class="icon fa-th-large"><span>Notice</span></a>
+        <a href="/#board" class="icon fa-th-list"><span>Board</span></a>
+        <a href="/#write" class="icon fa-pencil"><span>Write</span></a>
+        <a href="/#rank" class="icon fa-trophy"><span>Rank</span></a>
+        <a href="/#download" class="icon fa-download"><span>Download</span></a>
     </nav>
     <div id="main">
         <article class="panel">
@@ -17,61 +17,61 @@
                 <h1>Shop</h1>
 
                 <div class="col-md-12">
-                    <div class="col-md-4">
 
 
-                        <div class="4u 12u$(mobile)">
-                            <table class="table table-horizontal table-bordered">
-                                <tr style="text-align:center;">
-                                    <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
-                                </tr>
-                                <tr style="text-align:center; position:absolute; visibility:hidden;">
-                                    <td><input type="text" class="form-control" id="item_id"
-                                               value="{{buy.item_id}}" readonly></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td><input type="text" class="form-control" id="item_name"
-                                               value="{{buy.item_name}}" readonly></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>{{buy.item_price}} berry</td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>{{buy.item_type}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div>
+                    <div class="4u 12u$(mobile)">
+                        <table class="table table-horizontal table-bordered">
+                            <tr style="text-align:center;">
+                                <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
+                            </tr>
+                            <tr style="text-align:center; position:absolute; visibility:hidden;">
+                                <td><input type="text" class="form-control" id="item_id"
+                                           value="{{buy.item_id}}" readonly></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td><input type="text" class="form-control" id="item_name"
+                                           value="{{buy.item_name}}" readonly></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>{{buy.item_price}} berry</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>{{buy.item_type}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
                                     <span style="position:absolute; visibility:hidden;"><input type="text"
                                                                                                class="form-control"
                                                                                                id="email"
                                                                                                value="{{all_user.email}}"
                                                                                                readonly></span>
-                            <span>보유 베리 <input type="text" class="form-control" id="item_price"
-                                               value="{{all_user.berry}}" readonly></span>
-                            <span>아이템 가격 <input type="text" class="form-control" id="item_berry"
-                                                value="{{buy.item_price}}" readonly></span>
+                        <span>보유 베리 <input type="text" class="form-control" id="item_price"
+                                           value="{{all_user.berry}}" readonly></span>
+                        <span>아이템 가격 <input type="text" class="form-control" id="item_berry"
+                                            value="{{buy.item_price}}" readonly></span>
 
-                            <span style="position:absolute; visibility:hidden;">뺀 가격
+                        <span style="position:absolute; visibility:hidden;">뺀 가격
                         <textarea type="text" class="form-control" id="after_berry" readonly></textarea>
                     </span>
-                            <script>
+                        <script>
                         document.getElementById("after_berry").innerHTML = {{all_user.berry}}-{{buy.item_price}};
 
 
 
-                            </script>
-                        </div>
 
 
-                        <div>
-                            <span id="berry"></span>
-                            <span id="my_email" style="position:absolute; visibility:hidden;">{{my_email}}</span>
-                        </div>
-
-                        <button type="button" class="btn btn-primary" id="btn-buy">구매하기</button>
-                        <a href="/#shop" role="button" class="btn btn-secondary">구매취소</a>
+                        </script>
                     </div>
+
+
+                    <div>
+                        <span id="berry"></span>
+                        <span id="my_email" style="position:absolute; visibility:hidden;">{{my_email}}</span>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="btn-buy">구매하기</button>
+                    <a href="/#shop" role="button" class="btn btn-secondary">구매취소</a>
                 </div>
             </form>
         </article>
