@@ -1,55 +1,4 @@
 {{>layout/header}}
-
-<h1>회원정보</h1>
-
-<div class="col-md-12">
-    <div class="col-md-4">
-        <table class="table table-horizontal table-bordered">
-            {{#all_user}}
-                <tr style="text-align:center;">
-                    <td>{{user_id}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{name}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{email}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{role}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{catcher_win}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{catcher_lose}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{runner_win}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{runner_lose}}</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{berry}}berry</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{faster}} faster</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{raider}} raider</td>
-                </tr>
-                <tr style="text-align:center;">
-                    <td>{{timestop}} timestop</td>
-                </tr>
-            {{/all_user}}
-
-        </table>
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        <a href="/" role="button" class="btn btn-secondary">뒤로가기</a>
-    </div>
-</div>
-
 <div id="wrapper">
     <div id="main">
         <!-- Nav -->
@@ -65,79 +14,57 @@
         </nav>
         <article class="panel">
             <form action="#" method="post">
-                {{#all_user}}
-                    <div>
-                        <div class="row">
-                            <div class="6u 12u$(mobile)">
+                <h1>회원정보</h1>
+
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <table class="table table-horizontal table-bordered">
+                            {{#all_user}}
                                 <tr style="text-align:center;">
-                                    <td>이름</td>
+                                    <td>{{user_id}}</td>
+                                </tr>
+                                <tr style="text-align:center;">
                                     <td>{{name}}</td>
                                 </tr>
-                            </div>
-                            <div class="6u$ 12u$(mobile)">
                                 <tr style="text-align:center;">
-                                    <td>email</td>
                                     <td>{{email}}</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>술래 승리</td>
+                                    <td>{{role}}</td>
+                                </tr>
+                                <tr style="text-align:center;">
                                     <td>{{catcher_win}}</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>술래 패배</td>
                                     <td>{{catcher_lose}}</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>도망자 승리</td>
                                     <td>{{runner_win}}</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>도망자 패배</td>
                                     <td>{{runner_lose}}</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>나의 Berry</td>
-                                    <td>{{berry}}</td>
+                                    <td>{{berry}}berry</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>Faster 보유</td>
-                                    <td>{{faster}}</td>
+                                    <td>{{faster}} faster</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>Raider 보유</td>
-                                    <td>{{raider}}</td>
+                                    <td>{{raider}} raider</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
                                 <tr style="text-align:center;">
-                                    <td>timestop 보유</td>
-                                    <td>{{timestop}}</td>
+                                    <td>{{timestop}} timestop</td>
                                 </tr>
-                            </div>
-                            <div class="12u$">
-                                <a href="/#board" role="button" class="btn btn-secondary">취소</a>
-                                <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
-                                <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
-                            </div>
-                        </div>
-                    </div>
+                            {{/all_user}}
 
-                {{/all_user}}
+                        </table>
+                        <a href="/" role="button" class="btn btn-secondary">뒤로가기</a>
+                    </div>
+                </div>
             </form>
         </article>
     </div>
+
+
 {{>layout/footer}}
