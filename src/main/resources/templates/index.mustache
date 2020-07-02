@@ -33,7 +33,6 @@
                         </form>
                         <form>
                             <input type="text" class="form-control" id="my_email" value="{{userEmail}}" readonly>
-                            <button type="button" class="btn btn-primary" id="btn-unity">Unity</button>
                         </form>
                     {{/userName}}
                     {{^userName}}
@@ -60,11 +59,12 @@
             <p>
                 경매장을 통하여 다른 유저들과 거래를 하세요
             </p>
-            <div>
-                <a role="button" class="btn btn-secondary" href="/auction/select">판매 등록</a>
-            </div>
+
 
             {{#userName}}
+                <div>
+                    <a role="button" class="btn btn-secondary" href="/auction/select">판매 등록</a>
+                </div>
                 <section>
                     <div class="row">
                         <table class="table table-horizontal table-striped">
@@ -138,8 +138,9 @@
             <p>
                 공지사항을 통해 소식을 전해드립니다
             </p><br>
-                <a role="button" class="btn btn-secondary" href="/notice/save">공지사항 등록</a>
+
             {{#userName}}
+                <div><a role="button" class="btn btn-secondary" href="/notice/save">공지사항 등록</a></div>
                 <section>
                     <div class="row">
                         <table class="table table-horizontal table-striped">

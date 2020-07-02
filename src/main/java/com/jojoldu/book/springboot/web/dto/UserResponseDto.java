@@ -37,8 +37,8 @@ public class UserResponseDto {
         this.runner_win = entity.getRunner_win();
         this.runner_lose = entity.getRunner_lose();
         this.berry = entity.getBerry();
-        this.faster = entity.getSmoke_bomb();
-        this.raider = entity.getSmoke_bomb1();
-        this.timestop = entity.getSmoke_bomb2();
+        this.faster = entity.getFaster();
+        this.raider = entity.getRaider();
+        this.timestop = entity.getTimestop();
     }
 }
