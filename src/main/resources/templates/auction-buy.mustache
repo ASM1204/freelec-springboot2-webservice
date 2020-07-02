@@ -8,7 +8,7 @@
             <div class="form-group">
                 <a href="#" class="image fit"><img src={{buy.item_image}} alt=""></a>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="position:absolute; visibility:hidden;" >
                 <label for="auction_item_id">등록번호</label>
                 <input type="text" class="form-control" id="auction_item_id" value="{{buy.auction_id}}" readonly>
             </div>
@@ -32,7 +32,7 @@
                 <label for="auction_author"> 판매자 </label>
                 <input type="text" class="form-control" id="auction_author" value="{{buy.author}}" readonly>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="position:absolute; visibility:hidden;" >
                 <label for="auction_my_name"> 구매자 </label>
                 <input type="text" class="form-control" id="auction_my_name" value="{{all_user.email}}" readonly>
             </div>
