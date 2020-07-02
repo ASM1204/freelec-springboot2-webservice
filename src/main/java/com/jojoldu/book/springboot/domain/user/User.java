@@ -51,26 +51,13 @@ public class User extends BaseTimeEntity {
     private int berry;
 
     @Column(nullable = false)
-    private int smoke_bomb;
+    private int faster;
 
     @Column(nullable = false)
-    private int smoke_bomb1;
+    private int raider;
 
     @Column(nullable = false)
-    private int smoke_bomb2;
-
-    @Column(nullable = false)
-    private int smoke_bomb3;
-
-    @Column(nullable = false)
-    private int smoke_bomb4;
-
-    @Column(nullable = false)
-    private int smoke_bomb5;
-
-    @Column(nullable = false)
-    private int smoke_bomb13;
-
+    private int timestop;
 
     @Builder
     public User(String name, String email, String picture, Role role) {
@@ -103,32 +90,16 @@ public class User extends BaseTimeEntity {
 
     public void item_add(String item_name, int item_berry) {
         switch (item_name) {
-            case "smoke_bomb":
-                smoke_bomb++;
+            case "faster":
+                faster++;
                 berry -= item_berry;
                 break;
-            case "smoke_bomb1":
-                smoke_bomb1++;
+            case "raider":
+                raider++;
                 berry -= item_berry;
                 break;
-            case "smoke_bomb2":
-                smoke_bomb2++;
-                berry -= item_berry;
-                break;
-            case "smoke_bomb3":
-                smoke_bomb3++;
-                berry -= item_berry;
-                break;
-            case "smoke_bomb4":
-                smoke_bomb4++;
-                berry -= item_berry;
-                break;
-            case "smoke_bomb5":
-                smoke_bomb5++;
-                berry -= item_berry;
-                break;
-            case"smoke_bomb13":
-                smoke_bomb13++;
+            case "timestop":
+                timestop++;
                 berry -= item_berry;
                 break;
         }
@@ -140,26 +111,14 @@ public class User extends BaseTimeEntity {
 
     public void select_item(String item_name) {
         switch (item_name) {
-            case "smoke_bomb":
-                smoke_bomb--;
+            case "faster":
+                faster--;
                 break;
-            case "smoke_bomb1":
-                smoke_bomb1--;
+            case "raider":
+                raider--;
                 break;
-            case "smoke_bomb2":
-                smoke_bomb2--;
-                break;
-            case "smoke_bomb3":
-                smoke_bomb3--;
-                break;
-            case "smoke_bomb4":
-                smoke_bomb4--;
-                break;
-            case "smoke_bomb5":
-                smoke_bomb5--;
-                break;
-            case"smoke_bomb13":
-                smoke_bomb13--;
+            case "timestop":
+                timestop--;
                 break;
         }
     }

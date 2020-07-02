@@ -22,13 +22,9 @@ public class UserResponseDto {
     private int runner_win;
     private int runner_lose;
     private int berry;
-    private int smoke_bomb;
-    private int smoke_bomb1;
-    private int smoke_bomb2;
-    private int smoke_bomb3;
-    private int smoke_bomb4;
-    private int smoke_bomb5;
-    private int smoke_bomb13;
+    private int faster;
+    private int raider;
+    private int timestop;
 
     public UserResponseDto(User entity) {
         this.user_id = entity.getUser_id();
@@ -41,12 +37,8 @@ public class UserResponseDto {
         this.runner_win = entity.getRunner_win();
         this.runner_lose = entity.getRunner_lose();
         this.berry = entity.getBerry();
-        this.smoke_bomb = entity.getSmoke_bomb();
-        this.smoke_bomb1 = entity.getSmoke_bomb1();
-        this.smoke_bomb2 = entity.getSmoke_bomb2();
-        this.smoke_bomb3 = entity.getSmoke_bomb3();
-        this.smoke_bomb4 = entity.getSmoke_bomb4();
-        this.smoke_bomb5 = entity.getSmoke_bomb5();
-        this.smoke_bomb13 = entity.getSmoke_bomb13();
+        this.faster = entity.getSmoke_bomb();
+        this.raider = entity.getSmoke_bomb1();
+        this.timestop = entity.getSmoke_bomb2();
     }
 }
