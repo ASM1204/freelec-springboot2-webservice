@@ -1,40 +1,42 @@
 {{>layout/header}}
 <div id="wrapper">
     <div id="main">
-    <!-- Nav -->
-    <nav id="nav">
-        <a href="#me" class="icon fa-home active"><span>Home</span></a>
-        <a href="#auction" class="icon fa-star"><span>Auction</span></a>
-        <a href="#shop" class="icon fa-shopping-cart"><span>Shop</span></a>
-        <a href="#notice" class="icon fa-th-large"><span>Notice</span></a>
-        <a href="#board" class="icon fa-th-list"><span>Board</span></a>
-        <a href="#write" class="icon fa-pencil"><span>Write</span></a>
-        <a href="#rank" class="icon fa-trophy"><span>Rank</span></a>
-        <a href="#download" class="icon fa-download"><span>Download</span></a>
-    </nav>
-<article class="panel">
-        <form action="#" method="post">
-            <div>
-                <div class="row">
-                    <div class="6u 12u$(mobile)">
-                        <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
-                    </div>
-                    <div class="6u 12u$(mobile)">
-                        <input type="text" class="form-control" id="title" value="{{post.title}}">
-                    </div>
-                    <div class="6u$ 12u$(mobile)">
-                        <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
-                    </div>
-                    <div class="12u$">
-                        <textarea class="form-control" id="content" rows="8">{{post.content}}</textarea>
-                    </div>
-                    <div class="12u$">
-                        <button type="button" class="btn btn-primary" id="btn-save">Submit</button>
+        <!-- Nav -->
+        <nav id="nav">
+            <a href="#me" class="icon fa-home active"><span>Home</span></a>
+            <a href="#auction" class="icon fa-star"><span>Auction</span></a>
+            <a href="#shop" class="icon fa-shopping-cart"><span>Shop</span></a>
+            <a href="#notice" class="icon fa-th-large"><span>Notice</span></a>
+            <a href="#board" class="icon fa-th-list"><span>Board</span></a>
+            <a href="#write" class="icon fa-pencil"><span>Write</span></a>
+            <a href="#rank" class="icon fa-trophy"><span>Rank</span></a>
+            <a href="#download" class="icon fa-download"><span>Download</span></a>
+        </nav>
+        <article class="panel">
+            <form action="#" method="post">
+                <div>
+                    <div class="row">
+                        <div class="6u 12u$(mobile)" style="position:absolute; visibility:hidden;">
+                            <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+                        </div>
+                        <div class="6u 12u$(mobile)">
+                            <input type="text" class="form-control" id="title" value="{{post.title}}">
+                        </div>
+                        <div class="6u$ 12u$(mobile)">
+                            <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
+                        </div>
+                        <div class="12u$">
+                            <textarea class="form-control" id="content" rows="8">{{post.content}}</textarea>
+                        </div>
+                        <div class="12u$">
+                            <a href="/#board" role="button" class="btn btn-secondary">취소</a>
+                            <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+                            <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
-</article>
+            </form>
+        </article>
     </div>
 
 {{>layout/footer}}
