@@ -54,14 +54,11 @@
                 <h2>Auction</h2>
             </header>
             <p>
-                경매장을 통하여 다른 유저들과 거래를 하세요
+                경매장을 통하여 다른 유저들과 거래를 하세요 {{#userName}} <span><a role="button" class="btn btn-secondary" href="/auction/select">판매 등록</a></span>{{/userName}}
             </p>
 
 
             {{#userName}}
-                <div>
-                    <a role="button" class="btn btn-secondary" href="/auction/select">판매 등록</a>
-                </div>
                 <section>
                     <div class="row">
                         <table class="table table-horizontal table-striped">
@@ -134,11 +131,10 @@
                 <h2>Notice</h2>
             </header>
             <p>
-                공지사항을 통해 소식을 전해드립니다
+                공지사항을 통해 소식을 전해드립니다{{#userName}} <span><a role="button" class="btn btn-secondary" href="/notice/save">공지사항 등록</a></span>{{/userName}}
             </p><br>
 
             {{#userName}}
-                <div><a role="button" class="btn btn-secondary" href="/notice/save">공지사항 등록</a></div>
                 <section>
                     <div class="row">
                         <table class="table table-horizontal table-striped">
